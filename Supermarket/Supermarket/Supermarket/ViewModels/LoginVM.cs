@@ -1,5 +1,6 @@
 ﻿using Supermarket.Helpers;
-using Supermarket.Views;
+using Supermarket.Views.Admin;
+using Supermarket.Views.Cashier;
 using System;
 using System.Collections.Generic;
 using System.Linq;

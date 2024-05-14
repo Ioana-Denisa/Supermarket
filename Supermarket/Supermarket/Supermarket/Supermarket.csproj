@@ -161,11 +161,8 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
-    <Compile Include="Views\Administrator.xaml.cs">
+    <Compile Include="Views\Admin\Administrator.xaml.cs">
       <DependentUpon>Administrator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Cashier.xaml.cs">
-      <DependentUpon>Cashier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Categories.xaml.cs">
       <DependentUpon>Categories.xaml</DependentUpon>
@@ -185,7 +182,7 @@
     <Compile Include="Views\Admin\Users.xaml.cs">
       <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Cashier.xaml.cs">
+    <Compile Include="Views\Cashier\Cashier.xaml.cs">
       <DependentUpon>Cashier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Cashier\FindProduct.xaml.cs">
@@ -211,11 +208,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Administrator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Admin\Cashier.xaml">
+    <Page Include="Views\Admin\Administrator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,7 +236,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Cashier.xaml">
+    <Page Include="Views\Cashier\Cashier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

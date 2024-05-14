@@ -9,8 +9,8 @@
         Title="MainWindow" Height="550" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Ioana\Desktop\Supermarket\Supermarket\Supermarket\Images\supermarket.png" AlignmentX="Left" AlignmentY="Top" />
+            <ImageBrush ImageSource="C:\Users\Ioana\Desktop\Supermarket project\Supermarket\Supermarket\Supermarket\Images\supermarket.png" AlignmentX="Left" AlignmentY="Top" />
         </Grid.Background>
-        <Button Content="Login " HorizontalAlignment="Center" Margin="0,19,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold" FontStyle="Italic" Background="White" Height="55" Width="220" Foreground="#FF88B22A" BorderBrush="White" Command="{Binding OpenWindowCommand}"/>
+        <Button Content="START " HorizontalAlignment="Center" Margin="0,19,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="50" FontWeight="Bold" FontStyle="Italic" Background="White" Height="55" Width="220" Foreground="#FF88B22A" BorderBrush="White" Command="{Binding OpenWindowCommand}"/>
     </Grid>
 </Window>

@@ -9,7 +9,7 @@
         Title="Login" Height="550" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Ioana\Desktop\Supermarket\Supermarket\Supermarket\Images\login.png" AlignmentX="Left" AlignmentY="Top" />
+            <ImageBrush ImageSource="C:\Users\Ioana\Desktop\Supermarket project\Supermarket\Supermarket\Supermarket\Images\login.png" AlignmentX="Left" AlignmentY="Top" />
         </Grid.Background>
         <TextBlock HorizontalAlignment="Left" Margin="242,124,0,0" TextWrapping="Wrap" Text="Administrator" VerticalAlignment="Top" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock HorizontalAlignment="Left" Margin="239,324,0,0" TextWrapping="Wrap" Text="Cashier" VerticalAlignment="Top" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="36" FontWeight="Bold" FontStyle="Italic"/>
@@ -21,7 +21,7 @@
         <TextBox x:Name="tbUsernameCashier" HorizontalAlignment="Left" Margin="360,384,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Height="25" BorderBrush="#FF0D5FA5"/>
         <PasswordBox Name="passwordAdmin" HorizontalAlignment="Left" Margin="360,224,0,0" VerticalAlignment="Top" Width="200" Height="25" BorderBrush="#FF0D5FA5"/>
         <PasswordBox x:Name="passwordCashier" HorizontalAlignment="Left" Margin="360,421,0,0" VerticalAlignment="Top" Width="200" Height="25" BorderBrush="#FF0D5FA5"/>
-        <Button Name="loginAdmin" Content="Login as administrator" HorizontalAlignment="Left" Margin="362,259,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="20" Height="30" FontWeight="Bold" FontStyle="Italic" Command="{Binding OpenWindowCommandLogin}" CommandParameter="1" />
-        <Button Name="loginCashier" Content="Login as a cashier" HorizontalAlignment="Left" Margin="384,454,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="20" Height="30" FontWeight="Bold" FontStyle="Italic" Command="{Binding OpenWindowCommandLogin}" CommandParameter="2" />
+        <Button Name="loginAdmin" Content="Login as administrator" HorizontalAlignment="Left" Margin="357,259,0,0" VerticalAlignment="Top" BorderBrush="White" Background="#FF0D5FA5" Foreground="White" FontFamily="Times New Roman" FontSize="20" Height="30" FontWeight="Bold" FontStyle="Italic" Command="{Binding OpenWindowCommandLogin}" CommandParameter="1" Width="203" />
+        <Button Name="loginCashier" Content="Login as a cashier" HorizontalAlignment="Left" Margin="360,454,0,0" VerticalAlignment="Top" BorderBrush="White" Background="#FF105FA3" Foreground="#FFFCFCFC" FontFamily="Times New Roman" FontSize="20" Height="30" FontWeight="Bold" FontStyle="Italic" Command="{Binding OpenWindowCommandLogin}" CommandParameter="2" Width="200" />
     </Grid>
 </Window>
