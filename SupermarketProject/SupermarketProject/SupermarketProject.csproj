@@ -157,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Admin\UserAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Cashier\Cashier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,13 +177,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Migrations\20240513170651_SupermarketMigration.cs" />
-    <Compile Include="Migrations\20240513170651_SupermarketMigration.Designer.cs">
-      <DependentUpon>20240513170651_SupermarketMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20240513185513_NewMigration.cs" />
-    <Compile Include="Migrations\20240513185513_NewMigration.Designer.cs">
-      <DependentUpon>20240513185513_NewMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20240516151208_Supermarket.cs" />
+    <Compile Include="Migrations\20240516151208_Supermarket.Designer.cs">
+      <DependentUpon>20240516151208_Supermarket.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SupermarketDBContextModelSnapshot.cs" />
     <Compile Include="Models\BusinessLogicLayer\AdministratorBLL.cs" />
@@ -188,12 +188,12 @@
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\StatusProduct.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\SupermarketDBContext.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TicketProducts.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="ViewModels\AdministratorVM.cs" />
     <Compile Include="ViewModels\Commands\BasePropertyChanged.cs" />
     <Compile Include="ViewModels\Commands\NonGenericCommand.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
@@ -201,6 +201,9 @@
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="Views\Admin\Administrator.xaml.cs">
       <DependentUpon>Administrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\UserAdmin.xaml.cs">
+      <DependentUpon>UserAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Cashier\Cashier.xaml.cs">
       <DependentUpon>Cashier.xaml</DependentUpon>
@@ -244,8 +247,6 @@
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="ViewModels\Admin\" />
-    <Folder Include="ViewModels\Cashier\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\administrator.png" />

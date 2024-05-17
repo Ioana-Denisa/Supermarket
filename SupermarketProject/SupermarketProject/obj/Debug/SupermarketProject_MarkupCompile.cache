@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\App.xaml
-4883687820
+5-366152183
 
-3065491209
+292048768177
 150-312543114
-Views\Admin\Administrator.xaml;Views\Cashier\Cashier.xaml;Views\Login.xaml;Views\MainWindow.xaml;
+Views\Admin\Administrator.xaml;Views\Admin\UserAdmin.xaml;Views\Cashier\Cashier.xaml;Views\Login.xaml;Views\MainWindow.xaml;
 
 False
 

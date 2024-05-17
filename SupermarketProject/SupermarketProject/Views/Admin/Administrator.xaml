@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SupermarketProject.ViewModels"
+        xmlns:local="clr-namespace:SupermarketProject.ViewModels" d:DataContext="{d:DesignInstance Type=local:AdministratorVM}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Administrator" Height="550" Width="800">
@@ -11,8 +11,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\Images\administrator.png" AlignmentX="Left" AlignmentY="Top" />
         </Grid.Background>
-        <StackPanel Margin="145,199,335,39" >
-            <Button Content="Users" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="280" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35"/>
+        <StackPanel Margin="145,199,335,39" DataContext="{Binding ElementName=AdministratorVM}" >
+            <Button Content="Users" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="280" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35" Command="{Binding UserCommand}"/>
             <Button Content="Categories" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="280" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35"/>
             <Button Content="Producers" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35"/>
             <Button Content="Products" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35"/>

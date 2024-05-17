@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,9 @@ namespace SupermarketProject.Models
     {
         [Key]
         public int StockID {  get; set; }
+        [ForeignKey("Product")]
+        public int ProductID {  get; set; }
+
 
         [Required]
         public int Quantity {  get; set; }

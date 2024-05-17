@@ -10,13 +10,13 @@ namespace SupermarketProject.Models
 {
     public class TicketProducts
     {
-        [Key]
-        public int TicketProductID {  get; set; }
        
         [ForeignKey("Ticket")]
+        [Key]
         public int TicketID {  get; set; }
        
         [ForeignKey("Product")]
+        [Key]
         public int ProductID {  get; set; }
       
         [Required]
@@ -24,6 +24,8 @@ namespace SupermarketProject.Models
        
         [Required]
         public decimal Subtotal {  get; set; }
+
+
        
     }
 }

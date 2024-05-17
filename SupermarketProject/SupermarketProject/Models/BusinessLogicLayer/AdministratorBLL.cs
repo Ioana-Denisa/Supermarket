@@ -153,23 +153,23 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         #region Ticket commands
 
-        public void AddTicket(TicketProducts t)
+        public void AddTicket(Ticket t)
         {
-            _context.TicketProducts.Add(t);
+            _context.Tickets.Add(t);
             _context.SaveChanges();
         }
 
-        public TicketProducts GetTicketById(int id)
+        public Ticket GetTicketById(int id)
         {
-            return _context.TicketProducts.Find(id);
+            return _context.Tickets.Find(id);
         }
 
-        public IEnumerable<TicketProducts> GetAllTickets()
+        public IEnumerable<Ticket> GetAllTickets()
         {
-            return _context.TicketProducts.ToList();
+            return _context.Tickets.ToList();
         }
 
-        public void UpdateTicket(TicketProducts t)
+        public void UpdateTicket(Ticket t)
         {
             _context.Entry(t).State = EntityState.Modified;
             _context.SaveChanges();
@@ -177,7 +177,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public void DeleteTicket(int id)
         {
-            var t = _context.TicketProducts.Find(id);
+            var t = _context.Tickets.Find(id);
             if (t != null)
             {
                 _context.SaveChanges();

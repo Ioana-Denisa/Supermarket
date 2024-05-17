@@ -1,5 +1,4 @@
-﻿using SupermarketProject.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +15,15 @@ using System.Windows.Shapes;
 namespace SupermarketProject.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for Administrator.xaml
+    /// Interaction logic for UserAdmin.xaml
     /// </summary>
-    public partial class Administrator : Window
+    public partial class UserAdmin : Window
     {
-        public Administrator()
+        public UserAdmin()
         {
             InitializeComponent();
-            DataContext = new AdministratorVM();
         }
+
+    
     }
 }

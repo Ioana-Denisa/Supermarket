@@ -1,0 +1,32 @@
+﻿<Window x:Class="SupermarketProject.Views.Admin.UserAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SupermarketProject.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Administrator" Height="550" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="20,19,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="575" Height="85">
+            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="20,0,0,10"/>
+            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10"/>
+            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10"/>
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="25,107,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160">
+            <TextBlock TextWrapping="Wrap" Text="Username" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
+            <TextBlock TextWrapping="Wrap" Text="Password" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="Role" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+
+        </StackPanel>
+        <StackPanel Margin="115,109,440,315" >
+            <TextBox TextWrapping="Wrap" Text="" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
+            <TextBox TextWrapping="Wrap" Text="" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
+            <TextBox TextWrapping="Wrap" Text="" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,0,0,10"/>
+
+        </StackPanel>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="40,224,230,30" AutoGenerateColumns="True" /> 
+
+    </Grid>
+</Window>

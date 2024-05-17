@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SupermarketProject.Migrations
 {
-    public partial class SupermarketMigration : Migration
+    public partial class Supermarket : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace SupermarketProject.Migrations
                 {
                     CategoryID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
+
                 },
                 constraints: table =>
                 {
@@ -69,24 +70,9 @@ namespace SupermarketProject.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StatusProducts",
-                columns: table => new
-                {
-                    StatusID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_StatusProducts", x => x.StatusID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TicketProducts",
                 columns: table => new
                 {
-                    TicketProductID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     TicketID = table.Column<int>(nullable: false),
                     ProductID = table.Column<int>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
@@ -94,7 +80,7 @@ namespace SupermarketProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TicketProducts", x => x.TicketProductID);
+                    table.PrimaryKey("PK_TicketProducts", x => new { x.TicketID, x.ProductID });
                 });
 
             migrationBuilder.CreateTable(
@@ -133,13 +119,13 @@ namespace SupermarketProject.Migrations
                 {
                     StockID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductID = table.Column<int>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     Unit = table.Column<string>(nullable: false),
                     SupplyDate = table.Column<DateTime>(nullable: false),
                     ExpirationDate = table.Column<DateTime>(nullable: false),
                     PurchasePrice = table.Column<decimal>(nullable: false),
-                    SellingPrice = table.Column<decimal>(nullable: false),
-                    ProductID = table.Column<int>(nullable: true)
+                    SellingPrice = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -149,7 +135,7 @@ namespace SupermarketProject.Migrations
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -170,9 +156,6 @@ namespace SupermarketProject.Migrations
                 name: "Producers");
 
             migrationBuilder.DropTable(
-                name: "StatusProducts");
-
-            migrationBuilder.DropTable(
                 name: "Stocks");
 
             migrationBuilder.DropTable(
@@ -180,9 +163,6 @@ namespace SupermarketProject.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tickets");
-
-            migrationBuilder.DropTable(
-                name: "TypeUsers");
 
             migrationBuilder.DropTable(
                 name: "Users");

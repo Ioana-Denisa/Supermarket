@@ -25,7 +25,9 @@ namespace SupermarketProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
@@ -108,22 +110,6 @@ namespace SupermarketProject.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("SupermarketProject.Models.StatusProduct", b =>
-                {
-                    b.Property<int>("StatusID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("StatusID");
-
-                    b.ToTable("StatusProducts");
-                });
-
             modelBuilder.Entity("SupermarketProject.Models.Stock", b =>
                 {
                     b.Property<int>("StockID")
@@ -134,7 +120,7 @@ namespace SupermarketProject.Migrations
                     b.Property<DateTime>("ExpirationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ProductID")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PurchasePrice")
@@ -183,10 +169,8 @@ namespace SupermarketProject.Migrations
 
             modelBuilder.Entity("SupermarketProject.Models.TicketProducts", b =>
                 {
-                    b.Property<int>("TicketProductID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("TicketID")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
@@ -197,28 +181,9 @@ namespace SupermarketProject.Migrations
                     b.Property<decimal>("Subtotal")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("TicketID")
-                        .HasColumnType("int");
-
-                    b.HasKey("TicketProductID");
+                    b.HasKey("TicketID", "ProductID");
 
                     b.ToTable("TicketProducts");
-                });
-
-            modelBuilder.Entity("SupermarketProject.Models.TypeUser", b =>
-                {
-                    b.Property<int>("TypeID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TypeID");
-
-                    b.ToTable("TypeUsers");
                 });
 
             modelBuilder.Entity("SupermarketProject.Models.User", b =>
@@ -249,7 +214,9 @@ namespace SupermarketProject.Migrations
                 {
                     b.HasOne("SupermarketProject.Models.Product", null)
                         .WithMany("Stocks")
-                        .HasForeignKey("ProductID");
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
