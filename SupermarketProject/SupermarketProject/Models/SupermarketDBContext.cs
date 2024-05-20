@@ -17,16 +17,12 @@ namespace SupermarketProject.Models
         public DbSet<Producer> Producers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Stock> Stocks { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<TicketProducts> TicketProducts { get; set; }
+        public DbSet<Receipt> Receipts { get; set; }
+        public DbSet<ReceiptProducts> ReceiptProducts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=IOAANA\SQLEXPRESS;Database=SupermarketAplication;Trusted_Connection=True");
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<TicketProducts>()
-                .HasKey(tp => new { tp.TicketID, tp.ProductID });
-        }
+
     }
 }

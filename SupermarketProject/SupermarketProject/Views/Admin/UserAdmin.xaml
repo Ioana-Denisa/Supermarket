@@ -3,30 +3,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SupermarketProject.ViewModels"
+        xmlns:local="clr-namespace:SupermarketProject.ViewModels" 
+        xmlns:localConverter="clr-namespace:SupermarketProject.Converters"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Administrator" Height="550" Width="800">
+    <Window.DataContext>
+        <local:UserVM/>
+    </Window.DataContext>
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="20,19,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="575" Height="85">
-            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="20,0,0,10"/>
-            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10"/>
-            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10"/>
+            <StackPanel.Resources>
+                <localConverter:UserConvert x:Key="userConvert"/>
+            </StackPanel.Resources>
+            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="20,0,0,10" Command="{Binding AddCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource userConvert}">
+                        <Binding ElementName="txtName" Path="Text"/>
+                        <Binding ElementName="txtPassword" Path="Text"/>
+                        <Binding ElementName="txtType" Path="Text"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=usersGrid, Path=SelectedItem}"/>
+            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=usersGrid, Path=SelectedItem}"/>
 
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Margin="25,107,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160">
+        <StackPanel HorizontalAlignment="Left" Margin="40,119,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="125">
             <TextBlock TextWrapping="Wrap" Text="Username" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
             <TextBlock TextWrapping="Wrap" Text="Password" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
             <TextBlock TextWrapping="Wrap" Text="Role" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
 
         </StackPanel>
-        <StackPanel Margin="115,109,440,315" >
-            <TextBox TextWrapping="Wrap" Text="" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
-            <TextBox TextWrapping="Wrap" Text="" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
-            <TextBox TextWrapping="Wrap" Text="" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,0,0,10"/>
+        <StackPanel Margin="115,114,440,275" >
+            <TextBox Name="txtName" TextWrapping="Wrap" Text="{Binding ElementName=usersGrid, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10" />
+            <TextBox Name="txtPassword" TextWrapping="Wrap" Text="{Binding ElementName=usersGrid, Path=SelectedItem.Password, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
+            <TextBox Name="txtType" TextWrapping="Wrap" Text="{Binding ElementName=usersGrid, Path=SelectedItem.Type, UpdateSourceTrigger=PropertyChanged}" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,0,0,10"/>
 
         </StackPanel>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="40,224,230,30" AutoGenerateColumns="True" /> 
+        <DataGrid Name="usersGrid" Margin="40,259,320,15" AutoGenerateColumns="False"  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding UsersList}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding UserID}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="41,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+
 
     </Grid>
 </Window>

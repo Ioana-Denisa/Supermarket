@@ -87,3 +87,6 @@ C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Supermar.8C5ABDDA.Up2Date
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\UserAdmin.g.cs
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\UserAdmin.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\CategoryAdmin.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\CategoryAdmin.baml

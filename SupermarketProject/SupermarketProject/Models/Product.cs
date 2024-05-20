@@ -12,23 +12,12 @@ namespace SupermarketProject.Models
     {
         [Key]
         public int ProductID {  get; set; }
-
         [Required]
         public string Name {  get; set; }
-
         [Required]
-
         public string Barcode {  get; set; }
-
-        [ForeignKey("Category")]
-        public int CategoryID {  get; set; }
-
-        [ForeignKey("Producer")]
-
-        public int ProducerID {  get; set; }
-
-
-        [Required]
+        public Category Category {  get; set; }
+        public Producer Producer {  get; set; }
         public ICollection<Stock> Stocks {  get; set; }
 
         [Required]

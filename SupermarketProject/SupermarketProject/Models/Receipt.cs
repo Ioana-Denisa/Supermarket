@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SupermarketProject.Views.Cashier;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,23 +10,16 @@ using System.Threading.Tasks;
 
 namespace SupermarketProject.Models
 {
-    public class Ticket
+    public class Receipt
     {
         [Key]
-        public int TicketID {  get; set; }
-        
+        public int ReceipID {  get; set; }
+        public ICollection<ReceiptProducts> ReceiptProducts { get; set; }
         [Required]
         public DateTime ReleseDate {  get; set; }
-        
-        [ForeignKey("Cashier")]
-        public int CashierID {  get; set; }
-       
+        public User Cashier {  get; set; }
         [Required]
-        public decimal Total {  get; set; }
-        public Ticket()
-        {
-            Total = 0;
-        }
+        public float Total {  get; set; }
        
     }
 }

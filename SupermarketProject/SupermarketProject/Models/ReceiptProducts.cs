@@ -8,24 +8,17 @@ using System.Threading.Tasks;
 
 namespace SupermarketProject.Models
 {
-    public class TicketProducts
+    public class ReceiptProducts
     {
-       
-        [ForeignKey("Ticket")]
         [Key]
-        public int TicketID {  get; set; }
-       
-        [ForeignKey("Product")]
-        [Key]
-        public int ProductID {  get; set; }
+        public int ReceiptProductsID {  get; set; }
+        public Receipt Receipt {  get; set; }
+        public Product Product {  get; set; }
       
         [Required]
         public int Quantity {  get; set; }
        
         [Required]
-        public decimal Subtotal {  get; set; }
-
-
-       
+        public float Subtotal {  get; set; }
     }
 }

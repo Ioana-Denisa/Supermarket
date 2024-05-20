@@ -13,9 +13,7 @@ namespace SupermarketProject.Models
     {
         [Key]
         public int StockID {  get; set; }
-        [ForeignKey("Product")]
-        public int ProductID {  get; set; }
-
+        public Product Product {  get; set; }
 
         [Required]
         public int Quantity {  get; set; }
@@ -32,11 +30,11 @@ namespace SupermarketProject.Models
 
         [Required]
 
-        public decimal PurchasePrice {  get; set; }
+        public float PurchasePrice {  get; set; }
 
         [Required]
 
-        public decimal SellingPrice {  get; set; }
+        public float SellingPrice {  get; set; }
         public Stock()
         {
             Quantity = 0;

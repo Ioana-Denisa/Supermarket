@@ -14,10 +14,9 @@ namespace SupermarketProject.Models
         public int OfferID {  get; set; }
         [Required]
         public string Reason {  get; set; }
-        [ForeignKey("Product")]
-        public int ProductID { get; set; }
+        public Product Product { get; set; }
         [Required]
-        public decimal DiscountPercentage {  get; set; }
+        public float DiscountPercentage {  get; set; }
         [Required]
         public DateTime ValidFrom { get; set; }
         [Required]
@@ -26,7 +25,7 @@ namespace SupermarketProject.Models
         public Offer()
         {
             Reason = "";
-            DiscountPercentage = 10;
+            DiscountPercentage = 0;
 
         }
     }

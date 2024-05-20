@@ -153,31 +153,31 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         #region Ticket commands
 
-        public void AddTicket(Ticket t)
+        public void AddReceipt(Receipt t)
         {
-            _context.Tickets.Add(t);
+            _context.Receipts.Add(t);
             _context.SaveChanges();
         }
 
-        public Ticket GetTicketById(int id)
+        public Receipt GetReceiptById(int id)
         {
-            return _context.Tickets.Find(id);
+            return _context.Receipts.Find(id);
         }
 
-        public IEnumerable<Ticket> GetAllTickets()
+        public IEnumerable<Receipt> GetAllReceipts()
         {
-            return _context.Tickets.ToList();
+            return _context.Receipts.ToList();
         }
 
-        public void UpdateTicket(Ticket t)
+        public void UpdateReceipt(Receipt t)
         {
             _context.Entry(t).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void DeleteTicket(int id)
+        public void DeleteReceipt(int id)
         {
-            var t = _context.Tickets.Find(id);
+            var t = _context.Receipts.Find(id);
             if (t != null)
             {
                 _context.SaveChanges();

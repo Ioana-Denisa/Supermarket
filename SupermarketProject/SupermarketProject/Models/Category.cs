@@ -12,9 +12,8 @@ namespace SupermarketProject.Models
 
         [Key]
         public int CategoryID { get; set; }
-
-        [MaxLength(50), Required] 
-        public string Name;
+        [Required]
+        public string Name { get; set; }
 
         public Category() {
             Name = "";

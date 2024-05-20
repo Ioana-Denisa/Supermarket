@@ -1,7 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,18 +12,39 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 {
     public class UserBLL
     {
-        private SupermarketDBContext _context=new SupermarketDBContext();
-
+        private SupermarketDBContext _context = new SupermarketDBContext();
+        public ObservableCollection<User> UsersList { get; set; }
 
         public UserBLL(SupermarketDBContext context)
         {
             _context = context;
         }
 
-        public void Add(User user)
+        public string ErrorMessage { get; set; }
+        public void Add(object obj)
         {
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            User user = obj as User;
+            if (_context.Users.FirstOrDefault(u => u.Name == user.Name && u.Password == user.Password && u.Type==user.Type)!=null)
+                ErrorMessage = "Datele acestea deja exista, alegeti altele!";
+            else if (user != null)
+            {
+                if (string.IsNullOrEmpty(user.Name))
+                {
+                    ErrorMessage = "Numele trebuie precizat!";
+                }
+                else if (string.IsNullOrEmpty(user.Password))
+                {
+                    ErrorMessage = "Parola trebuie precizata!";
+                }
+                else
+                {
+                    _context.Users.Add(user);
+                    _context.SaveChanges();
+                    user.UserID = _context.Users.Max(item => item.UserID);
+                    UsersList.Add(user);
+                    ErrorMessage = "";
+                }
+            }
         }
 
         public User GetById(int id)
@@ -28,23 +52,51 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             return _context.Users.Find(id);
         }
 
-        public IEnumerable<User> GetAll()
+        public ObservableCollection<User> GetAll()
         {
-            return _context.Users.ToList();
-        }
-
-        public void Update(User user)
-        {
-            _context.Entry(user).State = EntityState.Modified;
-            _context.SaveChanges();
-        }
-
-        public void Delete(int id)
-        {
-            var user = _context.Users.Find(id);
-            if (user != null)
+            List<User> users = _context.Users.FromSqlRaw("GetAllUsers").ToList();
+            ObservableCollection<User> result = new ObservableCollection<User>();
+            foreach (User user in users)
             {
+                result.Add(user);
+            }
+            if (result.Count == 0)
+                return null;
+            return result;
+        }
+
+        public void Update(object obj)
+        {
+            User user = obj as User;
+            if (user == null)
+                ErrorMessage = "Selecteaza un user!";
+            else if (string.IsNullOrEmpty(user.Name))
+                ErrorMessage = "Numele trebuie precizat!";
+            else if (string.IsNullOrEmpty(user.Password))
+                ErrorMessage = "Parola trebuie precizata!";
+            else
+            {
+                _context.Entry(user).State = EntityState.Modified;
                 _context.SaveChanges();
+            }
+
+        }
+
+        public void Delete(object obj)
+        {
+            User user = obj as User;
+            if (user == null)
+            {
+                ErrorMessage = "Selecteaza un user";
+            }
+            else
+            {
+                User p = _context.Users.Where(i => i.UserID == user.UserID).FirstOrDefault();
+
+                _context.Remove(p);
+                _context.SaveChanges();
+                UsersList.Remove(user);
+                ErrorMessage = "";
             }
         }
 

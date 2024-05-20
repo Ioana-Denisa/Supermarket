@@ -13,7 +13,7 @@ namespace SupermarketProject.ViewModels
     public class AdministratorVM:BasePropertyChanged
     {
         private ICommand userCommand;
-        private ICommand CategoryCommand;
+        private ICommand categoryCommand;
         private ICommand producerCommand;
         private ICommand productCommand;
         private ICommand stockCommand;
@@ -36,6 +36,24 @@ namespace SupermarketProject.ViewModels
             var user = new UserAdmin();
             user.Show();
 
+        }
+
+        public ICommand CategoryCommand
+        {
+            get
+            {
+                if(categoryCommand==null)
+                {
+                    categoryCommand = new NonGenericCommand(CategoryWindow); 
+                }
+                return categoryCommand;
+            }
+        }
+
+        private void CategoryWindow(object obj)
+        {
+            var category=new CategoryAdmin();
+            category.Show();
         }
     }
 }

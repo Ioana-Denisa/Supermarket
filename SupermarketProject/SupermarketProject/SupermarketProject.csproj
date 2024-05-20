@@ -26,7 +26,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -157,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Admin\CategoryAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\UserAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -177,12 +181,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Migrations\20240516151208_Supermarket.cs" />
-    <Compile Include="Migrations\20240516151208_Supermarket.Designer.cs">
-      <DependentUpon>20240516151208_Supermarket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\SupermarketDBContextModelSnapshot.cs" />
+    <Compile Include="Converters\CategoryConvert.cs" />
+    <Compile Include="Converters\UserConvert.cs" />
     <Compile Include="Models\BusinessLogicLayer\AdministratorBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\CategoryBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\ProducerBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\ProductBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\ReceiptBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UserBLL.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Offer.cs" />
@@ -190,17 +195,22 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\SupermarketDBContext.cs" />
-    <Compile Include="Models\Ticket.cs" />
-    <Compile Include="Models\TicketProducts.cs" />
+    <Compile Include="Models\Receipt.cs" />
+    <Compile Include="Models\ReceiptProducts.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\AdministratorVM.cs" />
+    <Compile Include="ViewModels\CategoryVM.cs" />
     <Compile Include="ViewModels\Commands\BasePropertyChanged.cs" />
     <Compile Include="ViewModels\Commands\NonGenericCommand.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\UserVM.cs" />
     <Compile Include="Views\Admin\Administrator.xaml.cs">
       <DependentUpon>Administrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\CategoryAdmin.xaml.cs">
+      <DependentUpon>CategoryAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\UserAdmin.xaml.cs">
       <DependentUpon>UserAdmin.xaml</DependentUpon>
@@ -245,7 +255,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
