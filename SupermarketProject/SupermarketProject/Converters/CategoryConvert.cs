@@ -12,7 +12,7 @@ namespace SupermarketProject.Converters
     {
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (values[0] != null && values[1] != null && values[2] != null)
+            if (values[0] != null )
             {
                 return new Category()
                 {

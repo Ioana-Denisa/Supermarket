@@ -14,7 +14,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="20,19,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="575" Height="85">
             <StackPanel.Resources>
-                <localConverter:UserConvert x:Key="categoryConvert"/>
+                <localConverter:CategoryConvert x:Key="categoryConvert"/>
             </StackPanel.Resources>
             <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="20,0,0,10" Command="{Binding AddCommand}">
                 <Button.CommandParameter>

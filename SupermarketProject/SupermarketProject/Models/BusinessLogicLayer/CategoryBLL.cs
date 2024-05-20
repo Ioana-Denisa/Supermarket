@@ -16,6 +16,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public CategoryBLL(SupermarketDBContext context)
         {
             _context = context;
+
         }
 
         public string ErrorMessage { get; set; }

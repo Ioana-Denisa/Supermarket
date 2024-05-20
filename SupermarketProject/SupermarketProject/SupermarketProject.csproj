@@ -183,11 +183,21 @@
     </Compile>
     <Compile Include="Converters\CategoryConvert.cs" />
     <Compile Include="Converters\UserConvert.cs" />
+    <Compile Include="Migrations\20240520181101_InitialMigration.cs" />
+    <Compile Include="Migrations\20240520181101_InitialMigration.Designer.cs">
+      <DependentUpon>20240520181101_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240520182912_SecondMigration.cs" />
+    <Compile Include="Migrations\20240520182912_SecondMigration.Designer.cs">
+      <DependentUpon>20240520182912_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SupermarketDBContextModelSnapshot.cs" />
     <Compile Include="Models\BusinessLogicLayer\AdministratorBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\CategoryBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProducerBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProductBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ReceiptBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\StockBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UserBLL.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Offer.cs" />

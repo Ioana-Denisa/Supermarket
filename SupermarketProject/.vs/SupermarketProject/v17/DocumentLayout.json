@@ -3,48 +3,92 @@
   "WorkspaceRootPath": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\models\\businesslogiclayer\\stockbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\stockbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\models\\businesslogiclayer\\receiptbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\receiptbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\cashier\\cashier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\cashier\\cashier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\models\\businesslogiclayer\\userbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\businesslogiclayer\\userbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\userbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\models\\businesslogiclayer\\productbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\productbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\models\\businesslogiclayer\\producerbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\producerbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\businesslogiclayer\\categorybll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\categorybll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\commands\\nongenericcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\viewmodels\\commands\\nongenericcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\categoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\viewmodels\\categoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\viewmodels\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\businesslogiclayer\\producerbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\producerbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\admin\\useradmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\useradmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\admin\\categoryadmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\categoryadmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\converters\\categoryconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\converters\\categoryconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\converters\\userconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\converters\\userconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\supermarketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\supermarketdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\migrations\\20240520182912_secondmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\migrations\\20240520182912_secondmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\migrations\\20240520181101_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\migrations\\20240520181101_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|c:\\users\\ioana\\desktop\\supermarket project\\supermarketproject\\supermarketproject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\businesslogiclayer\\receiptbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\receiptbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\cashier\\cashier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\cashier\\cashier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\businesslogiclayer\\productbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\businesslogiclayer\\productbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\receiptproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,20 +99,8 @@
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\producer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\categoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\viewmodels\\categoryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\converters\\categoryconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\converters\\categoryconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\models\\businesslogiclayer\\administratorbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,14 +115,6 @@
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\administrator.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\admin\\useradmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\useradmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\admin\\categoryadmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\categoryadmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\admin\\categoryadmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\categoryadmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -101,18 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\views\\admin\\useradmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\views\\admin\\useradmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\viewmodels\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\converters\\userconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\converters\\userconvert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\commands\\nongenericcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|solutionrelative:supermarketproject\\viewmodels\\commands\\nongenericcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E0788C8-536F-4E21-8FE0-BF896A361741}|SupermarketProject\\SupermarketProject.csproj|C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\supermarketproject\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -205,7 +217,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -213,149 +225,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReceiptBLL.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAADwvxQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:43:07.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductBLL.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAuwHcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T17:27:43.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Product.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\Product.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAuwBcAAAAAAAAA",
+              "Title": "StockBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\StockBLL.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\StockBLL.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\StockBLL.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\StockBLL.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAwwHMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:26:51.267Z",
+              "WhenOpened": "2024-05-20T19:13:39.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\User.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\User.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\User.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABYAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:41:51.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UserBLL.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\UserBLL.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\UserBLL.cs",
               "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\UserBLL.cs",
               "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\UserBLL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAADwv2QAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T17:54:24.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CategoryBLL.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAwwDIAAAAMAAAA",
+              "DocumentIndex": 5,
+              "Title": "CategoryVM.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\CategoryVM.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\CategoryVM.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\CategoryVM.cs",
+              "RelativeToolTip": "SupermarketProject\\ViewModels\\CategoryVM.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAnwDMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T10:34:38.781Z",
+              "WhenOpened": "2024-05-20T11:34:34.296Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Receipt.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Receipt.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Receipt.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Receipt.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\Receipt.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABMAAAAfAAAA",
+              "DocumentIndex": 11,
+              "Title": "UserConvert.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\UserConvert.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Converters\\UserConvert.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\UserConvert.cs",
+              "RelativeToolTip": "SupermarketProject\\Converters\\UserConvert.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAArwBMAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:37:36.564Z",
+              "WhenOpened": "2024-05-20T08:52:13.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Offer.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Offer.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Offer.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Offer.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\Offer.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAwBIAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T14:19:07.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Cashier.xaml",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Cashier\\Cashier.xaml",
-              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Cashier\\Cashier.xaml",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Cashier\\Cashier.xaml",
-              "RelativeToolTip": "SupermarketProject\\Views\\Cashier\\Cashier.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-10T13:53:19.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "SupermarketDBContext.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\SupermarketDBContext.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\SupermarketDBContext.cs",
               "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\SupermarketDBContext.cs",
               "RelativeToolTip": "SupermarketProject\\Models\\SupermarketDBContext.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAiwBwAAAAAAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAArwBgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T16:37:33.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
+              "Title": "NonGenericCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
+              "RelativeToolTip": "SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAIA8wCAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T14:01:05.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\CategoryBLL.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAnwDIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T10:34:38.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Stock.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Stock.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\Stock.cs",
               "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Stock.cs",
               "RelativeToolTip": "SupermarketProject\\Models\\Stock.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAgwBAAAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T16:35:42.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ProducerBLL.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ProducerBLL.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\ProducerBLL.cs",
@@ -368,85 +342,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Category.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
+              "DocumentIndex": 6,
+              "Title": "UserVM.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\UserVM.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\UserVM.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\UserVM.cs",
+              "RelativeToolTip": "SupermarketProject\\ViewModels\\UserVM.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAA5wGAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T14:16:22.183Z",
+              "WhenOpened": "2024-05-17T12:11:09.392Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ReceiptProducts.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\ReceiptProducts.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\ReceiptProducts.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\ReceiptProducts.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\ReceiptProducts.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:40:11.816Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Producer.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Producer.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Producer.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Producer.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\Producer.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:27:18.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CategoryConvert.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\CategoryConvert.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Converters\\CategoryConvert.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\CategoryConvert.cs",
-              "RelativeToolTip": "SupermarketProject\\Converters\\CategoryConvert.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T11:01:21.764Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AdministratorBLL.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
-              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
-              "ViewState": "AQIAAIoAAAAAAAAAAAAmwFUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T07:12:21.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CategoryVM.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\CategoryVM.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\CategoryVM.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\CategoryVM.cs",
-              "RelativeToolTip": "SupermarketProject\\ViewModels\\CategoryVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T11:34:34.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 8,
               "Title": "UserAdmin.xaml",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\UserAdmin.xaml",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\UserAdmin.xaml",
@@ -458,55 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "UserAdmin.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
-              "RelativeToolTip": "SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAArwBgAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T09:38:14.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Administrator.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
-              "RelativeToolTip": "SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBoAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T16:26:33.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AdministratorVM.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\AdministratorVM.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\AdministratorVM.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\AdministratorVM.cs",
-              "RelativeToolTip": "SupermarketProject\\ViewModels\\AdministratorVM.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAvwDUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T16:09:41.125Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Administrator.xaml",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml",
-              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\Administrator.xaml",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml",
-              "RelativeToolTip": "SupermarketProject\\Views\\Admin\\Administrator.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-16T16:09:25.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 9,
               "Title": "CategoryAdmin.xaml",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\CategoryAdmin.xaml",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\CategoryAdmin.xaml",
@@ -518,7 +379,229 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoryConvert.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\CategoryConvert.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Converters\\CategoryConvert.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\CategoryConvert.cs",
+              "RelativeToolTip": "SupermarketProject\\Converters\\CategoryConvert.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwA4AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T11:01:21.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Offer.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Offer.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Offer.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Offer.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\Offer.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAxwBIAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T14:19:07.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ReceiptBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\ReceiptBLL.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAADwvxQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T17:43:07.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Receipt.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Receipt.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Receipt.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Receipt.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\Receipt.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAuwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T16:37:36.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\User.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\User.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\User.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T16:41:51.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserAdmin.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
+              "RelativeToolTip": "SupermarketProject\\Views\\Admin\\UserAdmin.xaml.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAArwBgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T09:38:14.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Administrator.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
+              "RelativeToolTip": "SupermarketProject\\Views\\Admin\\Administrator.xaml.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T16:26:33.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AdministratorVM.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\AdministratorVM.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\AdministratorVM.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\AdministratorVM.cs",
+              "RelativeToolTip": "SupermarketProject\\ViewModels\\AdministratorVM.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAvwDUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T16:09:41.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Administrator.xaml",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml",
+              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\Administrator.xaml",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\Administrator.xaml",
+              "RelativeToolTip": "SupermarketProject\\Views\\Admin\\Administrator.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-16T16:09:25.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Product.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\Product.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T16:26:51.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\ProductBLL.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAuwHcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T17:27:43.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20240520181101_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Migrations\\20240520181101_InitialMigration.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Migrations\\20240520181101_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Migrations\\20240520181101_InitialMigration.cs",
+              "RelativeToolTip": "SupermarketProject\\Migrations\\20240520181101_InitialMigration.cs",
+              "ViewState": "AQIAANAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T18:11:03.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20240520182912_SecondMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Migrations\\20240520182912_SecondMigration.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Migrations\\20240520182912_SecondMigration.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Migrations\\20240520182912_SecondMigration.cs",
+              "RelativeToolTip": "SupermarketProject\\Migrations\\20240520182912_SecondMigration.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwA0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T18:29:13.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Cashier.xaml",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Cashier\\Cashier.xaml",
+              "RelativeDocumentMoniker": "SupermarketProject\\Views\\Cashier\\Cashier.xaml",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Cashier\\Cashier.xaml",
+              "RelativeToolTip": "SupermarketProject\\Views\\Cashier\\Cashier.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-10T13:53:19.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Category.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T14:16:22.183Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 22,
+              "Title": "ReceiptProducts.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\ReceiptProducts.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\ReceiptProducts.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\ReceiptProducts.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\ReceiptProducts.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T16:40:11.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Producer.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Producer.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\Producer.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\Producer.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\Producer.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T16:27:18.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AdministratorBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
+              "RelativeDocumentMoniker": "SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
+              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
+              "RelativeToolTip": "SupermarketProject\\Models\\BusinessLogicLayer\\AdministratorBLL.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAmwFUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T07:12:21.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "CategoryAdmin.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Admin\\CategoryAdmin.xaml.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\Admin\\CategoryAdmin.xaml.cs",
@@ -530,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "SupermarketDBContextFactory[1].cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\BVIYF6Q8\\SupermarketDBContextFactory[1].cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\BVIYF6Q8\\SupermarketDBContextFactory[1].cs",
@@ -542,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "Stocks.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\EntityLayer\\Stocks.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\EntityLayer\\Stocks.cs",
@@ -553,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\EntityLayer\\Products.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\EntityLayer\\Products.cs",
@@ -564,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Login.xaml",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Login.xaml",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\Login.xaml",
@@ -576,43 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "UserVM.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\UserVM.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\UserVM.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\UserVM.cs",
-              "RelativeToolTip": "SupermarketProject\\ViewModels\\UserVM.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAswGAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T12:11:09.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UserConvert.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\UserConvert.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\Converters\\UserConvert.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Converters\\UserConvert.cs",
-              "RelativeToolTip": "SupermarketProject\\Converters\\UserConvert.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwAoAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T08:52:13.411Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "NonGenericCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
-              "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
-              "ToolTip": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
-              "RelativeToolTip": "SupermarketProject\\ViewModels\\Commands\\NonGenericCommand.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAArwDUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T14:01:05.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "LoginVM.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\LoginVM.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\LoginVM.cs",
@@ -624,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "Categories.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\EntityLayer\\Categories.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\EntityLayer\\Categories.cs",
@@ -635,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "MainWindowVM.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\MainWindowVM.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\MainWindowVM.cs",
@@ -647,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\EntityLayer\\Users.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\EntityLayer\\Users.cs",
@@ -658,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "Producers.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\EntityLayer\\Producers.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\EntityLayer\\Producers.cs",
@@ -669,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "Tickets.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Models\\EntityLayer\\Tickets.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Models\\EntityLayer\\Tickets.cs",
@@ -680,7 +727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\App.xaml",
               "RelativeDocumentMoniker": "SupermarketProject\\App.xaml",
@@ -692,7 +739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Category.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\Category.cs",
@@ -703,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "Ticket.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Ticket.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\Ticket.cs",
@@ -714,7 +761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "Login.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Login.xaml.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\Login.xaml.cs",
@@ -726,7 +773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\MainWindow.xaml",
@@ -738,7 +785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\MainWindow.xaml.cs",
@@ -750,7 +797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Commands\\RelayCommand.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\Commands\\RelayCommand.cs",
@@ -762,7 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "BasePropertyChanged.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\ViewModels\\Commands\\BasePropertyChanged.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\ViewModels\\Commands\\BasePropertyChanged.cs",
@@ -774,7 +821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\appsettings.json",
               "RelativeDocumentMoniker": "SupermarketProject\\appsettings.json",
@@ -786,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\packages.config",
               "RelativeDocumentMoniker": "SupermarketProject\\packages.config",
@@ -798,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "Cashier.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Ioana\\Desktop\\Supermarket project\\SupermarketProject\\SupermarketProject\\Views\\Cashier\\Cashier.xaml.cs",
               "RelativeDocumentMoniker": "SupermarketProject\\Views\\Cashier\\Cashier.xaml.cs",
