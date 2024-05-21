@@ -17,12 +17,7 @@ namespace SupermarketProject.Models
         public string Name {  get; set; }
        
         [Required]
-
         public string Country {  get; set; }
-       
-        public Producer() {
-            Name = "";
-            Country = "";
-        }
+        public bool IsActive { get; set; }
     }
 }

@@ -1,0 +1,64 @@
+﻿<Window x:Class="SupermarketProject.Views.Admin.ProductAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SupermarketProject.ViewModels" 
+        xmlns:localConverter="clr-namespace:SupermarketProject.Converters"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="ProductAdmin" Height="550" Width="800">
+    <Window.DataContext>
+        <local:ProductVM/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="35,-4,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="260" Height="240" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.Resources>
+                <localConverter:ProductConvert x:Key="productConvert"/>
+            </StackPanel.Resources>
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.233"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.396"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="10,-110,0,0" Command="{Binding AddCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource productConvert}">
+                        <Binding ElementName="txtName" Path="Text"/>
+                        <Binding ElementName="txtBarcode" Path="Text"/>
+                        <Binding ElementName="txtCategoryID" Path="Text"/>
+                        <Binding ElementName="txtProducerID" Path="Text"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="-145,10,10,0" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=productGrid, Path=SelectedItem}"/>
+            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="-165,130,0,0" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=productGrid, Path=SelectedItem}" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="300,14,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="205">
+            <TextBlock TextWrapping="Wrap" Text="Name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
+            <TextBlock TextWrapping="Wrap" Text="Barcode" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="CategoryID" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="ProducerID" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+        </StackPanel>
+        <StackPanel Margin="395,9,135,300" >
+            <TextBox Name="txtName" TextWrapping="Wrap" Text="{Binding ElementName=productGrid, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"  />
+            <TextBox Name="txtBarcode" TextWrapping="Wrap" Text="{Binding ElementName=productGrid, Path=SelectedItem.Barcode, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
+            <TextBox Name="txtCategoryID" TextWrapping="Wrap" Text="{Binding ElementName=productGrid, Path=SelectedItem.CategoryID, UpdateSourceTrigger=PropertyChanged}" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,0,0,10"/>
+            <TextBox Name="txtProducerID" TextWrapping="Wrap" Text="{Binding ElementName=productGrid, Path=SelectedItem.ProducerID, UpdateSourceTrigger=PropertyChanged}" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,0,0,10"/>
+        </StackPanel>
+        <DataGrid Name="productGrid" Margin="35,249,290,35" AutoGenerateColumns="False"  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProductList}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ProductID}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}"/>
+                <DataGridTextColumn Header="CategoryID" Binding="{Binding CategoryID}"/>
+                <DataGridTextColumn Header="ProducerID" Binding="{Binding ProducerID}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="35,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+
+    </Grid>
+</Window>

@@ -36,10 +36,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 }
                 else
                 {
+                    producer.IsActive = true;
                     _context.Producers.Add(producer);
                     _context.SaveChanges();
                     producer.ProducerID = _context.Producers.Max(item => item.ProducerID);
-                    ProducersList.Add(producer);
                     ErrorMessage = "";
                 }
             }
@@ -47,7 +47,9 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public Producer GetById(int id)
         {
-            return _context.Producers.Find(id);
+            Producer p= _context.Producers.Find(id);
+            if (p!=null && p.IsActive==true)
+                return p;else return null;
         }
 
         public ObservableCollection<Producer> GetAll()
@@ -56,7 +58,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             ObservableCollection<Producer> result = new ObservableCollection<Producer>();
             foreach (Producer prod in producer)
             {
-                result.Add(prod);
+                if(prod.IsActive)
+                    result.Add(prod);
             }
             if (result.Count == 0)
                 return null;
@@ -90,10 +93,13 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else
             {
                 Producer p = _context.Producers.Where(i => i.ProducerID == producer.ProducerID).FirstOrDefault();
-
-                _context.Remove(p);
+                p.IsActive = false;
                 _context.SaveChanges();
-                ProducersList.Remove(producer);
+                Producer prodInList = ProducersList.FirstOrDefault(i => i.ProducerID == p.ProducerID);
+                if (prodInList != null)
+                {
+                    prodInList.IsActive = p.IsActive;
+                }
                 ErrorMessage = "";
             }
         }

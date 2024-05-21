@@ -16,20 +16,12 @@ namespace SupermarketProject.Models
         public string Name {  get; set; }
         [Required]
         public string Barcode {  get; set; }
-        public Category Category {  get; set; }
-        public Producer Producer {  get; set; }
-        public ICollection<Stock> Stocks {  get; set; }
-
+        public int CategoryID {  get; set; }
+        public int ProducerID { get; set; } 
         [Required]
-
         public bool IsActive {  get; set; }
-        public Product()
-        {
-            Name = "";
-            Barcode = "";
-            Stocks= new HashSet<Stock>();
-            IsActive = true;
-        }
+        public virtual Category Category {  get; set; }
+        public virtual Producer Producer {  get; set; }
 
     }
 }

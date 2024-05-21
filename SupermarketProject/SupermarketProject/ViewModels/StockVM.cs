@@ -1,11 +1,10 @@
-﻿using SupermarketProject.Models;
-using SupermarketProject.Models.BusinessLogicLayer;
+﻿using SupermarketProject.Models.BusinessLogicLayer;
+using SupermarketProject.Models;
 using SupermarketProject.Models.EntityLayer;
 using SupermarketProject.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,21 +12,21 @@ using System.Windows.Input;
 
 namespace SupermarketProject.ViewModels
 {
-    public class UserVM :BasePropertyChanged
+    public class StockVM:BasePropertyChanged
     {
-        private UserBLL userBLL;
+        private StockBLL stockBLL;
         private string errorMessage;
-        public UserVM()
+        public StockVM()
         {
-            userBLL = new UserBLL(new SupermarketDBContext());
-            UsersList = userBLL.GetAll();
+            stockBLL = new StockBLL(new SupermarketDBContext());
+            StockList = stockBLL.GetAll();
         }
 
 
-        public ObservableCollection<User> UsersList
+        public ObservableCollection<Stock> StockList
         {
-            get => userBLL.UsersList;
-            set=>userBLL.UsersList = value;
+            get => stockBLL.StockList;
+            set => stockBLL.StockList = value;
         }
 
         public string ErrorMessage
@@ -47,21 +46,16 @@ namespace SupermarketProject.ViewModels
             {
                 if (addCommand == null)
                 {
-                    addCommand = new NonGenericCommand(CreateUser);
+                    addCommand = new NonGenericCommand(CreateStock);
                 }
                 return addCommand;
             }
         }
 
-        private void CreateUser(object parameter)
+        private void CreateStock(object parameter)
         {
-            userBLL.Add(parameter);
-            ErrorMessage=userBLL.ErrorMessage;
-        }
-
-        public void ClearFiels()
-        {
-
+            stockBLL.Add(parameter);
+            ErrorMessage = stockBLL.ErrorMessage;
         }
 
         private ICommand updateCommand;
@@ -69,9 +63,9 @@ namespace SupermarketProject.ViewModels
         {
             get
             {
-                if(updateCommand == null)
+                if (updateCommand == null)
                 {
-                    updateCommand=new NonGenericCommand(UpdateMethod);
+                    updateCommand = new NonGenericCommand(UpdateMethod);
                 }
                 return updateCommand;
             }
@@ -79,8 +73,8 @@ namespace SupermarketProject.ViewModels
 
         public void UpdateMethod(object obj)
         {
-            userBLL.Update(obj);
-            ErrorMessage=userBLL.ErrorMessage;
+            stockBLL.Update(obj);
+            ErrorMessage = stockBLL.ErrorMessage;
         }
 
         private ICommand deleteCommand;
@@ -88,17 +82,17 @@ namespace SupermarketProject.ViewModels
         {
             get
             {
-                if(deleteCommand == null)
+                if (deleteCommand == null)
                 {
-                    deleteCommand=new NonGenericCommand(DeleteMethod);
+                    deleteCommand = new NonGenericCommand(DeleteMethod);
                 }
                 return deleteCommand;
             }
         }
         public void DeleteMethod(object obj)
         {
-            userBLL.Delete(obj);
-            ErrorMessage=userBLL.ErrorMessage;
+            stockBLL.Delete(obj);
+            ErrorMessage = stockBLL.ErrorMessage;
         }
     }
 }

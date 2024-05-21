@@ -11,7 +11,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
     public class StockBLL
     {
         private SupermarketDBContext _context = new SupermarketDBContext();
-        public ObservableCollection<Stock> StocksList { get; set; }
+        public ObservableCollection<Stock> StockList { get; set; }
+        private const float adaosComercial = 0.25f;
 
         public StockBLL(SupermarketDBContext context)
         {
@@ -19,35 +20,52 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         }
 
         public string ErrorMessage { get; set; }
+
+        public float GetSellingPrice(Stock stock)
+        {
+            float adaos = stock.PurchasePrice * adaosComercial;
+            return adaos + stock.PurchasePrice;
+        }
         public void Add(object obj)
         {
             Stock stock = obj as Stock;
-            if (_context.Stocks.FirstOrDefault(u => u.ExpirationDate == stock.ExpirationDate && u.SupplyDate== stock.SupplyDate && u.PurchasePrice== stock.PurchasePrice && u.SellingPrice==stock.SellingPrice && u.Unit==stock.Unit && u.Quantity==stock.Quantity && u.Product==stock.Product) != null)
-                ErrorMessage = "Datele acestea deja exista, alegeti altele!";
+
+            if (stock == null)
+            {
+                ErrorMessage = "Obiectul adăugat este nul.";
+                return;
+            }
+
+            if (_context.Stocks.Any(u => u.ExpirationDate == stock.ExpirationDate && u.SupplyDate == stock.SupplyDate && u.PurchasePrice == stock.PurchasePrice && u.Unit == stock.Unit && u.Quantity == stock.Quantity && u.ProductID == stock.ProductID))
+            {
+                ErrorMessage = "Datele acestea deja există, alegeți altele!";
+            }
             else
             {
-                if (stock.Product==null)
+                if (string.IsNullOrEmpty(stock.Unit))
                 {
-                    ErrorMessage = "Alege un produs!";
+                    ErrorMessage = "Unitatea de măsură trebuie specificată!";
                 }
-                else if (string.IsNullOrEmpty(stock.Unit))
+                else if (stock.ExpirationDate == null)
                 {
-                    ErrorMessage = "Unitatea de masura trebuie precizata!";
-                }
-                else if (stock.ExpirationDate==null)
-                {
-                    ErrorMessage = "Data de expirare trebuie precizata!";
+                    ErrorMessage = "Data de expirare trebuie specificată!";
                 }
                 else if (stock.SupplyDate == null)
                 {
-                    ErrorMessage = "Data de achizitie trebuie precizata!";
+                    ErrorMessage = "Data de achiziție trebuie specificată!";
+                }
+                else if (stock.PurchasePrice == null)
+                {
+                    ErrorMessage = "Prețul de achiziție trebuie specificat!";
                 }
                 else
                 {
+                    stock.SellingPrice = GetSellingPrice(stock);
+                    stock.IsActiv = true;
                     _context.Stocks.Add(stock);
                     _context.SaveChanges();
                     stock.StockID = _context.Stocks.Max(item => item.StockID);
-                    StocksList.Add(stock);
+                    StockList.Add(stock);
                     ErrorMessage = "";
                 }
             }
@@ -55,7 +73,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public Stock GetById(int id)
         {
-            return _context.Stocks.Find(id);
+            Stock s = _context.Stocks.Find(id);
+            if (s != null && s.IsActiv == true)
+                return s;
+            return null;
         }
 
         public ObservableCollection<Stock> GetAll()
@@ -64,7 +85,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             ObservableCollection<Stock> result = new ObservableCollection<Stock>();
             foreach (Stock s in stock)
             {
-                result.Add(s);
+                if(s.IsActiv)
+                    result.Add(s);
             }
             if (result.Count == 0)
                 return null;
@@ -104,10 +126,13 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else
             {
                 Stock p = _context.Stocks.Where(i => i.StockID == s.StockID).FirstOrDefault();
-
-                _context.Remove(p);
+                p.IsActiv = false;
                 _context.SaveChanges();
-                StocksList.Remove(s);
+                Stock inList = StockList.FirstOrDefault(i => i.StockID == p.StockID);
+                if (inList != null)
+                {
+                    inList.IsActiv = false;
+                }
                 ErrorMessage = "";
             }
         }

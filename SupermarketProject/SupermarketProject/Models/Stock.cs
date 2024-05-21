@@ -12,36 +12,32 @@ namespace SupermarketProject.Models
     public class Stock
     {
         [Key]
-        public int StockID {  get; set; }
-        public Product Product {  get; set; }
+        public int StockID { get; set; }
+        public int ProductID { get; set; }
 
         [Required]
-        public int Quantity {  get; set; }
+        public int Quantity { get; set; }
 
         [Required]
-        public string Unit {  get; set; }
+        public string Unit { get; set; }
 
         [Required]
-        public DateTime SupplyDate {  get; set; }
-
-        [Required]
-
-        public DateTime ExpirationDate {  get; set; }
+        public DateTime SupplyDate { get; set; }
 
         [Required]
 
-        public float PurchasePrice {  get; set; }
+        public DateTime ExpirationDate { get; set; }
 
         [Required]
 
-        public float SellingPrice {  get; set; }
-        public Stock()
-        {
-            Quantity = 0;
-            Unit = "";
-            PurchasePrice = 0;
-            SellingPrice = 0;
-        }
+        public float PurchasePrice { get; set; }
+
+        [Required]
+
+        public float SellingPrice { get; set; }
+        public bool IsActiv {  get; set; }
+        public virtual Product Product {  get; set; }
+       
 
     }
 }

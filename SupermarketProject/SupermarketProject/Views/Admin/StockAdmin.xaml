@@ -1,0 +1,78 @@
+﻿<Window x:Class="SupermarketProject.Views.Admin.StockAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SupermarketProject.ViewModels" 
+        xmlns:localConverter="clr-namespace:SupermarketProject.Converters"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Stock" Height="550" Width="800">
+
+    <Window.DataContext>
+        <local:StockVM/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="35,-4,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="260" Height="240" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.Resources>
+                <localConverter:StockConvert x:Key="stockConvert"/>
+            </StackPanel.Resources>
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.233"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.396"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="10,-110,0,0" Command="{Binding AddCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource stockConvert}">
+                        <Binding ElementName="txtProductID" Path="Text"/>
+                        <Binding ElementName="txtQuantity" Path="Text"/>
+                        <Binding ElementName="txtUnit" Path="Text"/>
+                        <Binding ElementName="supplyDate" Path="SelectedDate"/>
+                        <Binding ElementName="expirationDate" Path="SelectedDate"/>
+                        <Binding ElementName="txtPurchasePrice" Path="Text"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="-145,10,10,0" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=stockGrid, Path=SelectedItem}"/>
+            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="-165,130,0,0" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=stockGrid, Path=SelectedItem}" />
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="300,14,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="205">
+            <TextBlock TextWrapping="Wrap" Text="ProductID" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
+            <TextBlock TextWrapping="Wrap" Text="Quantity" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="Unit" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="SupplyDate" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="ExpirationDate" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="PurchasePrice" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+
+        </StackPanel>
+        <StackPanel Margin="395,11,135,261" >
+            <TextBox Name="txtProductID" TextWrapping="Wrap" Text="{Binding ElementName=stockGrid, Path=SelectedItem.ProductID, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"  />
+            <TextBox Name="txtQuantity" TextWrapping="Wrap" Text="{Binding ElementName=stockGrid, Path=SelectedItem.Quantity, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
+            <TextBox Name="txtUnit" TextWrapping="Wrap" Text="{Binding ElementName=stockGrid, Path=SelectedItem.Unit, UpdateSourceTrigger=PropertyChanged}" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,0,0,10"/>
+            <DatePicker x:Name="supplyDate" Text="{Binding SelectedItem.SupplyDate, ElementName=stockGrid, UpdateSourceTrigger=PropertyChanged}" Width="155" />
+            <DatePicker x:Name="expirationDate"  Text="{Binding SelectedItem.ExpirationDate, ElementName=stockGrid, UpdateSourceTrigger=PropertyChanged}" Width="155" Margin="0,10,0,0" />
+            <TextBox Name="txtPurchasePrice" TextWrapping="Wrap" Text="{Binding ElementName=stockGrid, Path=SelectedItem.PurchasePrice, UpdateSourceTrigger=PropertyChanged}" Width="156" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"  Height="25" Margin="0,10,0,20"/>
+
+
+        </StackPanel>
+        <DataGrid Name="stockGrid" Margin="40,269,20,15" AutoGenerateColumns="False"  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding StockList}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding StockID}"/>
+                <DataGridTextColumn Header="ProductID" Binding="{Binding ProductID}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Unit" Binding="{Binding Unit}"/>
+                <DataGridTextColumn Header="SupplyDate" Binding="{Binding SupplyDate}"/>
+                <DataGridTextColumn Header="ExipirationDate" Binding="{Binding ExpirationDate}"/>
+                <DataGridTextColumn Header="PurchasePrice" Binding="{Binding PurchasePrice}"/>
+                <DataGridTextColumn Header="SellingPrice" Binding="{Binding SellingPrice}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="35,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+       
+    </Grid>
+</Window>

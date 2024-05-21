@@ -14,10 +14,8 @@ namespace SupermarketProject.Models
         public int CategoryID { get; set; }
         [Required]
         public string Name { get; set; }
+        public bool IsActive { get; set; }
 
-        public Category() {
-            Name = "";
-        }
       
     }
 }

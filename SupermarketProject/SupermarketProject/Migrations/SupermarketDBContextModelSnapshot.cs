@@ -26,6 +26,9 @@ namespace SupermarketProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -45,7 +48,10 @@ namespace SupermarketProject.Migrations
                     b.Property<float>("DiscountPercentage")
                         .HasColumnType("real");
 
-                    b.Property<int?>("ProductID")
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<string>("Reason")
@@ -76,6 +82,9 @@ namespace SupermarketProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -96,7 +105,7 @@ namespace SupermarketProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CategoryID")
+                    b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
@@ -106,7 +115,7 @@ namespace SupermarketProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProducerID")
+                    b.Property<int>("ProducerID")
                         .HasColumnType("int");
 
                     b.HasKey("ProductID");
@@ -125,18 +134,18 @@ namespace SupermarketProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CashierUserID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReleseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<float>("Total")
                         .HasColumnType("real");
 
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
                     b.HasKey("ReceipID");
 
-                    b.HasIndex("CashierUserID");
+                    b.HasIndex("UserID");
 
                     b.ToTable("Receipts");
                 });
@@ -148,13 +157,13 @@ namespace SupermarketProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ProductID")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ReceiptReceipID")
+                    b.Property<int>("ReceiptID")
                         .HasColumnType("int");
 
                     b.Property<float>("Subtotal")
@@ -164,7 +173,7 @@ namespace SupermarketProject.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.HasIndex("ReceiptReceipID");
+                    b.HasIndex("ReceiptID");
 
                     b.ToTable("ReceiptProducts");
                 });
@@ -179,7 +188,10 @@ namespace SupermarketProject.Migrations
                     b.Property<DateTime>("ExpirationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ProductID")
+                    b.Property<bool>("IsActiv")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<float>("PurchasePrice")
@@ -212,6 +224,9 @@ namespace SupermarketProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -233,43 +248,57 @@ namespace SupermarketProject.Migrations
                 {
                     b.HasOne("SupermarketProject.Models.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductID");
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SupermarketProject.Models.Product", b =>
                 {
                     b.HasOne("SupermarketProject.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID");
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SupermarketProject.Models.Producer", "Producer")
                         .WithMany()
-                        .HasForeignKey("ProducerID");
+                        .HasForeignKey("ProducerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SupermarketProject.Models.Receipt", b =>
                 {
                     b.HasOne("SupermarketProject.Models.User", "Cashier")
                         .WithMany()
-                        .HasForeignKey("CashierUserID");
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SupermarketProject.Models.ReceiptProducts", b =>
                 {
                     b.HasOne("SupermarketProject.Models.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductID");
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SupermarketProject.Models.Receipt", "Receipt")
-                        .WithMany("ReceiptProducts")
-                        .HasForeignKey("ReceiptReceipID");
+                        .WithMany()
+                        .HasForeignKey("ReceiptID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SupermarketProject.Models.Stock", b =>
                 {
                     b.HasOne("SupermarketProject.Models.Product", "Product")
-                        .WithMany("Stocks")
-                        .HasForeignKey("ProductID");
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

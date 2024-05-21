@@ -90,3 +90,7 @@ C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\CategoryAdmin.g.cs
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\CategoryAdmin.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\StockAdmin.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\StockAdmin.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductAdmin.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductAdmin.baml

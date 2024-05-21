@@ -59,9 +59,12 @@ namespace SupermarketProject.ViewModels
         private void Login(object parameter)
         {
             var user = userBLL.Authenticate(Username, Password);
+            
             if(user!=null)
             {
-                if (user.Type =="Administrator" && Type.Contains("Administrator"))
+                if (user.IsActive == false)
+                    MessageBox.Show("This user is INACTIV!");
+                else if (user.Type =="Administrator" && Type.Contains("Administrator"))
                 {
                     var admin = new Administrator();
                     admin.Show();

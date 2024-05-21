@@ -161,6 +161,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Admin\ProductAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\StockAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\UserAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,14 +190,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\CategoryConvert.cs" />
+    <Compile Include="Converters\ProductConvert.cs" />
+    <Compile Include="Converters\StockConvert.cs" />
     <Compile Include="Converters\UserConvert.cs" />
-    <Compile Include="Migrations\20240520181101_InitialMigration.cs" />
-    <Compile Include="Migrations\20240520181101_InitialMigration.Designer.cs">
-      <DependentUpon>20240520181101_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20240521170935_FirstMigration.cs" />
+    <Compile Include="Migrations\20240521170935_FirstMigration.Designer.cs">
+      <DependentUpon>20240521170935_FirstMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20240520182912_SecondMigration.cs" />
-    <Compile Include="Migrations\20240520182912_SecondMigration.Designer.cs">
-      <DependentUpon>20240520182912_SecondMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20240521171048_SecondMigration.cs" />
+    <Compile Include="Migrations\20240521171048_SecondMigration.Designer.cs">
+      <DependentUpon>20240521171048_SecondMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SupermarketDBContextModelSnapshot.cs" />
     <Compile Include="Models\BusinessLogicLayer\AdministratorBLL.cs" />
@@ -197,6 +207,7 @@
     <Compile Include="Models\BusinessLogicLayer\ProducerBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProductBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ReceiptBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\ReceiptProductsBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\StockBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UserBLL.cs" />
     <Compile Include="Models\Category.cs" />
@@ -215,12 +226,20 @@
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\ProductVM.cs" />
+    <Compile Include="ViewModels\StockVM.cs" />
     <Compile Include="ViewModels\UserVM.cs" />
     <Compile Include="Views\Admin\Administrator.xaml.cs">
       <DependentUpon>Administrator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\CategoryAdmin.xaml.cs">
       <DependentUpon>CategoryAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\ProductAdmin.xaml.cs">
+      <DependentUpon>ProductAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\StockAdmin.xaml.cs">
+      <DependentUpon>StockAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\UserAdmin.xaml.cs">
       <DependentUpon>UserAdmin.xaml</DependentUpon>

@@ -14,19 +14,15 @@ namespace SupermarketProject.Models
         public int OfferID {  get; set; }
         [Required]
         public string Reason {  get; set; }
-        public Product Product { get; set; }
+        public int ProductID {  get; set; }
         [Required]
         public float DiscountPercentage {  get; set; }
         [Required]
         public DateTime ValidFrom { get; set; }
         [Required]
         public DateTime ValidUntil { get; set; }
+        public bool IsActive {  get; set; }
+        public virtual Product Product { get; set; }
 
-        public Offer()
-        {
-            Reason = "";
-            DiscountPercentage = 0;
-
-        }
     }
 }

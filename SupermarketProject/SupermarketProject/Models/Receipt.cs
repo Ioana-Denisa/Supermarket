@@ -14,12 +14,12 @@ namespace SupermarketProject.Models
     {
         [Key]
         public int ReceipID {  get; set; }
-        public ICollection<ReceiptProducts> ReceiptProducts { get; set; }
         [Required]
         public DateTime ReleseDate {  get; set; }
-        public User Cashier {  get; set; }
+        public int UserID {  get; set; }
         [Required]
         public float Total {  get; set; }
+        public virtual User Cashier {  get; set; }
        
     }
 }

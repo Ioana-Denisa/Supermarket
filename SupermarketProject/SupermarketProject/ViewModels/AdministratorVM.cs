@@ -55,5 +55,39 @@ namespace SupermarketProject.ViewModels
             var category=new CategoryAdmin();
             category.Show();
         }
+
+        public ICommand StockCommand
+        {
+            get
+            {
+                if(stockCommand==null)
+                {
+                    stockCommand=new NonGenericCommand(StockWindow);
+                }
+                return stockCommand;
+            }
+        }
+
+        private void StockWindow(object obj)
+        {
+            var stock=new StockAdmin();
+            stock.Show();
+        }
+
+        public ICommand ProductCommand
+        {
+            get
+            {
+                if(productCommand==null)
+                    productCommand = new NonGenericCommand(ProductWindow);
+                return productCommand;
+            }
+        }
+
+        private void ProductWindow(object obj)
+        {
+            var product=new ProductAdmin();
+            product.Show(); 
+        }
     }
 }

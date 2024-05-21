@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SupermarketProject.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace SupermarketProject.Migrations
                 {
                     CategoryID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,7 +28,8 @@ namespace SupermarketProject.Migrations
                     ProducerID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
-                    Country = table.Column<string>(nullable: false)
+                    Country = table.Column<string>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +44,8 @@ namespace SupermarketProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false),
-                    Type = table.Column<string>(nullable: false)
+                    Type = table.Column<string>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,8 +60,8 @@ namespace SupermarketProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     Barcode = table.Column<string>(nullable: false),
-                    CategoryID = table.Column<int>(nullable: true),
-                    ProducerID = table.Column<int>(nullable: true),
+                    CategoryID = table.Column<int>(nullable: false),
+                    ProducerID = table.Column<int>(nullable: false),
                     IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -69,13 +72,13 @@ namespace SupermarketProject.Migrations
                         column: x => x.CategoryID,
                         principalTable: "Categories",
                         principalColumn: "CategoryID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Products_Producers_ProducerID",
                         column: x => x.ProducerID,
                         principalTable: "Producers",
                         principalColumn: "ProducerID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,18 +88,18 @@ namespace SupermarketProject.Migrations
                     ReceipID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ReleseDate = table.Column<DateTime>(nullable: false),
-                    CashierUserID = table.Column<int>(nullable: true),
+                    UserID = table.Column<int>(nullable: false),
                     Total = table.Column<float>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Receipts", x => x.ReceipID);
                     table.ForeignKey(
-                        name: "FK_Receipts_Users_CashierUserID",
-                        column: x => x.CashierUserID,
+                        name: "FK_Receipts_Users_UserID",
+                        column: x => x.UserID,
                         principalTable: "Users",
                         principalColumn: "UserID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -106,10 +109,11 @@ namespace SupermarketProject.Migrations
                     OfferID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Reason = table.Column<string>(nullable: false),
-                    ProductID = table.Column<int>(nullable: true),
+                    ProductID = table.Column<int>(nullable: false),
                     DiscountPercentage = table.Column<float>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: false),
-                    ValidUntil = table.Column<DateTime>(nullable: false)
+                    ValidUntil = table.Column<DateTime>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -119,7 +123,7 @@ namespace SupermarketProject.Migrations
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,13 +132,14 @@ namespace SupermarketProject.Migrations
                 {
                     StockID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductID = table.Column<int>(nullable: true),
+                    ProductID = table.Column<int>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     Unit = table.Column<string>(nullable: false),
                     SupplyDate = table.Column<DateTime>(nullable: false),
                     ExpirationDate = table.Column<DateTime>(nullable: false),
                     PurchasePrice = table.Column<float>(nullable: false),
-                    SellingPrice = table.Column<float>(nullable: false)
+                    SellingPrice = table.Column<float>(nullable: false),
+                    IsActiv = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -144,7 +149,7 @@ namespace SupermarketProject.Migrations
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,8 +158,8 @@ namespace SupermarketProject.Migrations
                 {
                     ReceiptProductsID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReceiptReceipID = table.Column<int>(nullable: true),
-                    ProductID = table.Column<int>(nullable: true),
+                    ReceiptID = table.Column<int>(nullable: false),
+                    ProductID = table.Column<int>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     Subtotal = table.Column<float>(nullable: false)
                 },
@@ -166,13 +171,13 @@ namespace SupermarketProject.Migrations
                         column: x => x.ProductID,
                         principalTable: "Products",
                         principalColumn: "ProductID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ReceiptProducts_Receipts_ReceiptReceipID",
-                        column: x => x.ReceiptReceipID,
+                        name: "FK_ReceiptProducts_Receipts_ReceiptID",
+                        column: x => x.ReceiptID,
                         principalTable: "Receipts",
                         principalColumn: "ReceipID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -196,14 +201,14 @@ namespace SupermarketProject.Migrations
                 column: "ProductID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReceiptProducts_ReceiptReceipID",
+                name: "IX_ReceiptProducts_ReceiptID",
                 table: "ReceiptProducts",
-                column: "ReceiptReceipID");
+                column: "ReceiptID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Receipts_CashierUserID",
+                name: "IX_Receipts_UserID",
                 table: "Receipts",
-                column: "CashierUserID");
+                column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Stocks_ProductID",

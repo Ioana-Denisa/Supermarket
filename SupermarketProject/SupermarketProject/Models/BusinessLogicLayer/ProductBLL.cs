@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace SupermarketProject.Models.BusinessLogicLayer
 {
@@ -22,7 +23,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public void Add(object obj)
         {
             Product product = obj as Product;
-            if (_context.Products.FirstOrDefault(p => p.Name == product.Name && p.Barcode == product.Barcode && p.Category==product.Category && p.Producer==product.Producer && p.Stocks==product.Stocks) != null)
+            if (_context.Products.FirstOrDefault(p => p.Name == product.Name && p.Barcode == product.Barcode && p.CategoryID==product.CategoryID && p.ProducerID==product.ProducerID && p.IsActive==product.IsActive ) != null)
                 ErrorMessage = "Datele acestea deja exista, alegeti altele!";
             else if (product != null)
             {
@@ -34,20 +35,17 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 {
                     ErrorMessage = "Codul de bare trebuie precizat!";
                 }
-                else if (string.IsNullOrEmpty(product.Category.Name))
+                else if (product.CategoryID==null)
                 {
-                    ErrorMessage = "Categoria trebuie precizata!";
+                    ErrorMessage = "ID-ul categoriei trebuie precizat!";
                 }
-                else if (string.IsNullOrEmpty(product.Producer.Name))
+                else if (product.ProducerID==null)
                 {
-                    ErrorMessage = "Numele producatorului trebuie precizat!";
-                }
-                else if (string.IsNullOrEmpty(product.Stocks.ToString()))
-                {
-                    ErrorMessage = "Stocul trebuie precizat!";
+                    ErrorMessage = "ID-ul producatorului trebuie precizat!";
                 }
                 else
                 {
+                    product.IsActive = true;
                     _context.Products.Add(product);
                     _context.SaveChanges();
                     product.ProductID = _context.Products.Max(item => item.ProductID);
@@ -59,7 +57,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public Product GetById(int id)
         {
-            return _context.Products.Find(id);
+            Product prod= _context.Products.Find(id);
+            if (prod != null && prod.IsActive == true)
+                return prod;
+            return null;
         }
 
         public ObservableCollection<Product> GetAll()
@@ -68,7 +69,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             ObservableCollection<Product> result = new ObservableCollection<Product>();
             foreach (Product prod in product)
             {
-                result.Add(prod);
+                if(prod.IsActive == true)
+                    result.Add(prod);
             }
             if (result.Count == 0)
                 return null;
@@ -85,11 +87,9 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else if (string.IsNullOrEmpty(product.Barcode))
                 ErrorMessage = "Codul de bare trebuie precizat!";
             else if (string.IsNullOrEmpty(product.Producer.Name))
-                ErrorMessage = "Producatorul trebuie precizat!";
+                ErrorMessage = "ID-ul producatorul trebuie precizat!";
             else if (string.IsNullOrEmpty(product.Producer.Name))
-                ErrorMessage = "Categoria trebuie precizata!";
-            else if (string.IsNullOrEmpty(product.Stocks.ToString()))
-                ErrorMessage = "Stocul trebuie precizat!";
+                ErrorMessage = "ID-ul categoriei trebuie precizat!";
             else
             {
                 _context.Entry(product).State = EntityState.Modified;
@@ -108,10 +108,13 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else
             {
                 Product p = _context.Products.Where(i => i.ProductID== product.ProductID).FirstOrDefault();
-
-                _context.Remove(p);
+                p.IsActive = false;
                 _context.SaveChanges();
-                ProductsList.Remove(product);
+                Product prodInList = ProductsList.FirstOrDefault(i => i.ProductID == p.ProductID);
+                if (prodInList != null)
+                {
+                    prodInList.IsActive = p.IsActive;
+                }
                 ErrorMessage = "";
             }
         }

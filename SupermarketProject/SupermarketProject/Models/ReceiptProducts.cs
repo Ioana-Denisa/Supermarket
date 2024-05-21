@@ -12,13 +12,15 @@ namespace SupermarketProject.Models
     {
         [Key]
         public int ReceiptProductsID {  get; set; }
-        public Receipt Receipt {  get; set; }
-        public Product Product {  get; set; }
+        public int ReceiptID {  get; set; }
+        public int ProductID {  get; set; }
       
         [Required]
         public int Quantity {  get; set; }
        
         [Required]
         public float Subtotal {  get; set; }
+        public virtual Receipt Receipt {  get; set; }
+        public virtual Product Product {  get; set; }
     }
 }

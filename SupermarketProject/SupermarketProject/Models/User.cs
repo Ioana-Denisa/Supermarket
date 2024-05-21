@@ -21,6 +21,7 @@ namespace SupermarketProject.Models
       
         [Required]
         public string Type {  get; set; }
+        public bool IsActive {  get; set; }
         
     }
 }

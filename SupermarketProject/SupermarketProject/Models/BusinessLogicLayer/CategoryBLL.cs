@@ -16,7 +16,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public CategoryBLL(SupermarketDBContext context)
         {
             _context = context;
-
+            CategoryList = new ObservableCollection<Category>();
         }
 
         public string ErrorMessage { get; set; }
@@ -33,9 +33,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 }
                 else
                 {
+                    category.IsActive = true;
                     _context.Categories.Add(category);
                     _context.SaveChanges();
-                    category.CategoryID = _context.Categories.Max(item => item.CategoryID);
+                    category.CategoryID= _context.Categories.Max(item => item.CategoryID);
                     CategoryList.Add(category);
                     ErrorMessage = "";
                 }
@@ -44,7 +45,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public Category GetById(int id)
         {
-            return _context.Categories.Find(id);
+            Category cat= _context.Categories.Find(id);
+            if (cat != null && cat.IsActive == true)
+                return cat;
+            return null;
         }
 
         public ObservableCollection<Category> GetAll()
@@ -53,7 +57,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             ObservableCollection<Category> result = new ObservableCollection<Category>();
             foreach (Category cat in category)
             {
-                result.Add(cat);
+                if(cat.IsActive==true)
+                    result.Add(cat);
             }
             if (result.Count == 0)
                 return null;
@@ -85,10 +90,13 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else
             {
                 Category p = _context.Categories.Where(i => i.CategoryID == category.CategoryID).FirstOrDefault();
-
-                _context.Remove(p);
+                p.IsActive = false;
                 _context.SaveChanges();
-                CategoryList.Remove(category);
+                Category categoryInList = CategoryList.FirstOrDefault(i => i.CategoryID == category.CategoryID);
+                if (categoryInList != null)
+                {
+                    categoryInList.IsActive = p.IsActive; 
+                }
                 ErrorMessage = "";
             }
         }
