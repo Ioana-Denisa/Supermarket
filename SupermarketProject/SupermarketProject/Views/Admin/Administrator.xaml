@@ -17,10 +17,10 @@
         <StackPanel Margin="145,199,335,39" >
             <Button Content="Users" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="280" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35" Command="{Binding UserCommand}"/>
             <Button Content="Categories" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="280" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35" Command="{Binding CategoryCommand}"/>
-            <Button Content="Producers" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35"/>
+            <Button Content="Producers" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35" Command="{Binding ProducerCommand}"/>
             <Button Content="Products" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35" Command="{Binding ProductCommand}"/>
-            <Button Content="Tickets" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Height="35" Margin="0,0,0,10"/>
             <Button Content="Stock" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="35" Command="{Binding StockCommand}"/>
+            <Button Content="More options" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="275" BorderBrush="{x:Null}" Foreground="White" Height="35" Margin="0,0,0,10" Command="{Binding MoreCommand}"/>
         </StackPanel>
     </Grid>
 </Window>

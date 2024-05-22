@@ -13,10 +13,14 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         private SupermarketDBContext _context = new SupermarketDBContext();
         public ObservableCollection<Stock> StockList { get; set; }
         private const float adaosComercial = 0.25f;
+        
+        public ObservableCollection<Product> ProductsList { get; set; }
 
         public StockBLL(SupermarketDBContext context)
         {
             _context = context;
+            StockList = GetAll();
+            ProductsList = GetAllProducts();
         }
 
         public string ErrorMessage { get; set; }
@@ -29,17 +33,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public void Add(object obj)
         {
             Stock stock = obj as Stock;
-
-            if (stock == null)
-            {
-                ErrorMessage = "Obiectul adăugat este nul.";
-                return;
-            }
-
-            if (_context.Stocks.Any(u => u.ExpirationDate == stock.ExpirationDate && u.SupplyDate == stock.SupplyDate && u.PurchasePrice == stock.PurchasePrice && u.Unit == stock.Unit && u.Quantity == stock.Quantity && u.ProductID == stock.ProductID))
-            {
-                ErrorMessage = "Datele acestea deja există, alegeți altele!";
-            }
+            if (_context.Stocks.FirstOrDefault(u => u.ExpirationDate == stock.ExpirationDate && u.SupplyDate == stock.SupplyDate && u.PurchasePrice == stock.PurchasePrice && u.Unit == stock.Unit && u.Quantity == stock.Quantity && u.ProductID == stock.ProductID) !=null)
+                 ErrorMessage = "Datele acestea deja există, alegeți altele!";
             else
             {
                 if (string.IsNullOrEmpty(stock.Unit))
@@ -62,10 +57,14 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 {
                     stock.SellingPrice = GetSellingPrice(stock);
                     stock.IsActiv = true;
+                    Product p = _context.Products.Where(o => stock.ProductID == o.ProductID).FirstOrDefault();
+                    if (p != null)
+                        stock.Product = p;
                     _context.Stocks.Add(stock);
                     _context.SaveChanges();
                     stock.StockID = _context.Stocks.Max(item => item.StockID);
                     StockList.Add(stock);
+           
                     ErrorMessage = "";
                 }
             }
@@ -86,7 +85,28 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             foreach (Stock s in stock)
             {
                 if(s.IsActiv)
+                {
+                    Product p = _context.Products.Where(o => s.ProductID == o.ProductID).FirstOrDefault();
+                    if (p != null)
+                        s.Product = p;
                     result.Add(s);
+                }
+            }
+            if (result.Count == 0)
+                return null;
+            return result;
+        }
+
+        public ObservableCollection<Product> GetAllProducts()
+        {
+            List<Product> prod = _context.Products.ToList();
+            ObservableCollection<Product> result = new ObservableCollection<Product>();
+            foreach (Product p in prod)
+            {
+                if (p.IsActive)
+                {
+                    result.Add(p);
+                }
             }
             if (result.Count == 0)
                 return null;
@@ -98,22 +118,20 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             Stock s = obj as Stock;
             if (s == null)
                 ErrorMessage = "Selecteaza un stock!";
-            else if (string.IsNullOrEmpty(s.Unit))
-                ErrorMessage = "Unitatea de masura trebuie precizata!";
-            else if (s.ExpirationDate == null)
+            else if (s.SellingPrice == null)
             {
-                ErrorMessage = "Data de expirare trebuie precizata!";
-            }
-            else if (s.SupplyDate == null)
-            {
-                ErrorMessage = "Data de achizitie trebuie precizata!";
+                ErrorMessage = "Precizati noul pret de vanzare!";
             }
             else
             {
-                _context.Entry(s).State = EntityState.Modified;
-                _context.SaveChanges();
+                if (s.SellingPrice <= s.PurchasePrice)
+                    ErrorMessage = "Pretul de vanzare trebuie sa fie mai mare decat pretul de cumparare!";
+                else
+                {
+                    _context.Entry(s).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
             }
-
         }
 
         public void Delete(object obj)

@@ -94,3 +94,12 @@ C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\StockAdmin.baml
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductAdmin.g.cs
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductAdmin.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProducerAdmin.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProducerAdmin.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\MoreOptions.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\MoreOptions.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductsCategoryForProducer.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductsCategoryForProducer.baml

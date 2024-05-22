@@ -98,6 +98,9 @@
     <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.77\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -161,7 +164,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Admin\MoreOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\ProducerAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\ProductAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\ProductsCategoryForProducer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,9 +205,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\CategoryConvert.cs" />
+    <Compile Include="Converters\ProducerConvert.cs" />
     <Compile Include="Converters\ProductConvert.cs" />
     <Compile Include="Converters\StockConvert.cs" />
     <Compile Include="Converters\UserConvert.cs" />
+    <Compile Include="Exceptions\UpdateProductsCombobox.cs" />
+    <Compile Include="Exceptions\UpdateStockCombobox.cs" />
     <Compile Include="Migrations\20240521170935_FirstMigration.cs" />
     <Compile Include="Migrations\20240521170935_FirstMigration.Designer.cs">
       <DependentUpon>20240521170935_FirstMigration.cs</DependentUpon>
@@ -201,11 +219,20 @@
     <Compile Include="Migrations\20240521171048_SecondMigration.Designer.cs">
       <DependentUpon>20240521171048_SecondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20240522133808_NewMigration.cs" />
+    <Compile Include="Migrations\20240522133808_NewMigration.Designer.cs">
+      <DependentUpon>20240522133808_NewMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240522170527_AgainMigration.cs" />
+    <Compile Include="Migrations\20240522170527_AgainMigration.Designer.cs">
+      <DependentUpon>20240522170527_AgainMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SupermarketDBContextModelSnapshot.cs" />
     <Compile Include="Models\BusinessLogicLayer\AdministratorBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\CategoryBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProducerBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProductBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\ProductsCategoryForProducer.cs" />
     <Compile Include="Models\BusinessLogicLayer\ReceiptBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ReceiptProductsBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\StockBLL.cs" />
@@ -224,8 +251,11 @@
     <Compile Include="ViewModels\Commands\BasePropertyChanged.cs" />
     <Compile Include="ViewModels\Commands\NonGenericCommand.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
+    <Compile Include="ViewModels\LargestReceiptVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\ProducerVM.cs" />
+    <Compile Include="ViewModels\ProductsCategoryForProducerVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
     <Compile Include="ViewModels\StockVM.cs" />
     <Compile Include="ViewModels\UserVM.cs" />
@@ -235,8 +265,17 @@
     <Compile Include="Views\Admin\CategoryAdmin.xaml.cs">
       <DependentUpon>CategoryAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\MoreOptions.xaml.cs">
+      <DependentUpon>MoreOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\ProducerAdmin.xaml.cs">
+      <DependentUpon>ProducerAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\ProductAdmin.xaml.cs">
       <DependentUpon>ProductAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\ProductsCategoryForProducer.xaml.cs">
+      <DependentUpon>ProductsCategoryForProducer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\StockAdmin.xaml.cs">
       <DependentUpon>StockAdmin.xaml</DependentUpon>
@@ -283,9 +322,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\administrator.png" />
     <Resource Include="Images\cashier.png" />

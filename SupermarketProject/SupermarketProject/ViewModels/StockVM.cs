@@ -16,10 +16,12 @@ namespace SupermarketProject.ViewModels
     {
         private StockBLL stockBLL;
         private string errorMessage;
+        private string selectedUnit;
         public StockVM()
         {
             stockBLL = new StockBLL(new SupermarketDBContext());
             StockList = stockBLL.GetAll();
+            ProductsList=stockBLL.GetAllProducts();
         }
 
 
@@ -29,6 +31,12 @@ namespace SupermarketProject.ViewModels
             set => stockBLL.StockList = value;
         }
 
+        public ObservableCollection<Product> ProductsList
+        {
+            get => stockBLL.ProductsList;
+            set => stockBLL.ProductsList = value;
+        }
+
         public string ErrorMessage
         {
             get => errorMessage;
@@ -36,6 +44,16 @@ namespace SupermarketProject.ViewModels
             {
                 errorMessage = value;
                 NotifyPropertyChanged("ErrorMessage");
+            }
+        }
+
+        public string SelectedUnit
+        {
+            get => selectedUnit;
+            set
+            { 
+                selectedUnit = value;
+                NotifyPropertyChanged("SelectedUnit");
             }
         }
 

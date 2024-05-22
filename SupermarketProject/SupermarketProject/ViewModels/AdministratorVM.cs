@@ -10,15 +10,16 @@ using System.Windows.Input;
 
 namespace SupermarketProject.ViewModels
 {
-    public class AdministratorVM:BasePropertyChanged
+    public class AdministratorVM : BasePropertyChanged
     {
         private ICommand userCommand;
         private ICommand categoryCommand;
         private ICommand producerCommand;
         private ICommand productCommand;
         private ICommand stockCommand;
-        private ICommand ticketCommand;
+        private ICommand moreCommand;
 
+        #region First commands
 
         public ICommand UserCommand
         {
@@ -42,9 +43,9 @@ namespace SupermarketProject.ViewModels
         {
             get
             {
-                if(categoryCommand==null)
+                if (categoryCommand == null)
                 {
-                    categoryCommand = new NonGenericCommand(CategoryWindow); 
+                    categoryCommand = new NonGenericCommand(CategoryWindow);
                 }
                 return categoryCommand;
             }
@@ -52,7 +53,7 @@ namespace SupermarketProject.ViewModels
 
         private void CategoryWindow(object obj)
         {
-            var category=new CategoryAdmin();
+            var category = new CategoryAdmin();
             category.Show();
         }
 
@@ -60,9 +61,9 @@ namespace SupermarketProject.ViewModels
         {
             get
             {
-                if(stockCommand==null)
+                if (stockCommand == null)
                 {
-                    stockCommand=new NonGenericCommand(StockWindow);
+                    stockCommand = new NonGenericCommand(StockWindow);
                 }
                 return stockCommand;
             }
@@ -70,7 +71,7 @@ namespace SupermarketProject.ViewModels
 
         private void StockWindow(object obj)
         {
-            var stock=new StockAdmin();
+            var stock = new StockAdmin();
             stock.Show();
         }
 
@@ -78,7 +79,7 @@ namespace SupermarketProject.ViewModels
         {
             get
             {
-                if(productCommand==null)
+                if (productCommand == null)
                     productCommand = new NonGenericCommand(ProductWindow);
                 return productCommand;
             }
@@ -86,8 +87,60 @@ namespace SupermarketProject.ViewModels
 
         private void ProductWindow(object obj)
         {
-            var product=new ProductAdmin();
-            product.Show(); 
+            var product = new ProductAdmin();
+            product.Show();
         }
+
+        public ICommand ProducerCommand
+        {
+            get
+            {
+                if (producerCommand == null)
+                    producerCommand = new NonGenericCommand(ProducerWindow);
+                return producerCommand;
+            }
+        }
+
+        private void ProducerWindow(object obj)
+        {
+            var producer = new ProducerAdmin();
+            producer.Show();
+        }
+
+        public ICommand MoreCommand
+        {
+            get
+            {
+                if(moreCommand==null)
+                    moreCommand= new NonGenericCommand(MoreWindow);
+                return moreCommand;
+            }
+        }
+        private void MoreWindow(object obj)
+        {
+            var more = new MoreOptions();
+            more.Show();
+        }
+        #endregion
+
+        #region Second Commands
+        private ICommand productCategory;
+        public ICommand ProductCategory
+        {
+            get
+            {
+                if (moreCommand == null)
+                    moreCommand = new NonGenericCommand(ProductCategoryW);
+                return moreCommand;
+            }
+        }
+
+        private void ProductCategoryW(object obj)
+        {
+            var w=new ProductsCategoryForProducer();
+            w.Show();
+        }
+        #endregion
+
     }
 }

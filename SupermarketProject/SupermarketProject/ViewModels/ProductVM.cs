@@ -20,6 +20,8 @@ namespace SupermarketProject.ViewModels
         {
             productBLL = new ProductBLL(new SupermarketDBContext());
             ProductList = productBLL.GetAll();
+            ProducerList=productBLL.GetAllProducers();
+            CategoryList= productBLL.GetAllCategories();
         }
 
 
@@ -29,6 +31,17 @@ namespace SupermarketProject.ViewModels
             set => productBLL.ProductsList = value;
         }
 
+        public ObservableCollection<Category> CategoryList
+        {
+            get => productBLL.CategorysList;
+            set => productBLL.CategorysList = value;
+        }
+
+        public ObservableCollection<Producer> ProducerList
+        {
+            get => productBLL.ProducerList;
+            set => productBLL.ProducerList = value;
+        }
         public string ErrorMessage
         {
             get => errorMessage;

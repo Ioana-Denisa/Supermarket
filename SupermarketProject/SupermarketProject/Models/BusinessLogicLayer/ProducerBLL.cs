@@ -36,10 +36,13 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 }
                 else
                 {
-                    producer.IsActive = true;
-                    _context.Producers.Add(producer);
-                    _context.SaveChanges();
+                    _context.Database.ExecuteSqlRaw("CreateProducer @p0,@p1", parameters: new object[] { producer.Name,producer.Country });
+
+                    //producer.IsActive = true;
+                    //_context.Producers.Add(producer);
+                    //_context.SaveChanges();
                     producer.ProducerID = _context.Producers.Max(item => item.ProducerID);
+                    ProducersList.Add(producer);
                     ErrorMessage = "";
                 }
             }
@@ -77,8 +80,9 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 ErrorMessage = "Tara trebuie precizata!";
             else
             {
-                _context.Entry(producer).State = EntityState.Modified;
-                _context.SaveChanges();
+                _context.Database.ExecuteSqlRaw("UpdateProducers @p0,@p1,@p2", parameters: new object[] { producer.Name,producer.Country,producer.ProducerID });
+                //_context.Entry(producer).State = EntityState.Modified;
+                //_context.SaveChanges();
             }
 
         }
@@ -92,13 +96,15 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             }
             else
             {
-                Producer p = _context.Producers.Where(i => i.ProducerID == producer.ProducerID).FirstOrDefault();
-                p.IsActive = false;
-                _context.SaveChanges();
-                Producer prodInList = ProducersList.FirstOrDefault(i => i.ProducerID == p.ProducerID);
+                _context.Database.ExecuteSqlRaw("DeleteProducer @p0", parameters: new object[] { producer.ProducerID });
+
+                //Producer p = _context.Producers.Where(i => i.ProducerID == producer.ProducerID).FirstOrDefault();
+                //p.IsActive = false;
+                //_context.SaveChanges();
+                Producer prodInList = ProducersList.FirstOrDefault(i => i.ProducerID == producer.ProducerID);
                 if (prodInList != null)
                 {
-                    prodInList.IsActive = p.IsActive;
+                    prodInList.IsActive = false;
                 }
                 ErrorMessage = "";
             }

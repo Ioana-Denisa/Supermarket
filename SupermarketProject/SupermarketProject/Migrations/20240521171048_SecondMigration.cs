@@ -10,7 +10,7 @@ namespace SupermarketProject.Migrations
                 AS
                 BEGIN
                     SET NOCOUNT ON;
-                    SELECT * FROM Users
+                    SELECT * FROM Users where IsActive=1
                 END";
             migrationBuilder.Sql(procedure);
 
@@ -18,9 +18,11 @@ namespace SupermarketProject.Migrations
                 AS
                 BEGIN
                     SET NOCOUNT ON;
-                    SELECT * FROM CATEGORIES
+                    SELECT * FROM Categories where IsActive=1
                 END";
             migrationBuilder.Sql(procedure2);
+
+           
 
         }
 

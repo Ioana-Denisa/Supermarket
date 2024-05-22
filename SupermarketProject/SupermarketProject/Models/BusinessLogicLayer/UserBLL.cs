@@ -24,7 +24,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public void Add(object obj)
         {
             User user = obj as User;
-            if (_context.Users.FirstOrDefault(u => u.Name == user.Name && u.Password == user.Password && u.Type==user.Type)!=null)
+            if (_context.Users.FirstOrDefault(u => u.Name == user.Name && u.Password == user.Password && u.Type==user.Type)!=null )
                 ErrorMessage = "Datele acestea deja exista, alegeti altele!";
             else if (user != null)
             {
@@ -38,10 +38,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 }
                 else
                 {
-                    user.IsActive = true;
-                    _context.Users.Add(user);
-                    _context.SaveChanges();
-                    user.UserID = _context.Users.Max(item => item.UserID);
+                    _context.Database.ExecuteSqlRaw("CreateUser @p0,@p1,@p2", parameters: new object[] { user.Name, user.Password, user.Type});
                     UsersList.Add(user);
                     ErrorMessage = "";
                 }
@@ -57,7 +54,8 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public ObservableCollection<User> GetAll()
         {
-            List<User> users = _context.Users.FromSqlRaw("GetAllUsers").ToList();
+             List<User> users = _context.Users.FromSqlRaw("GetAllUsers").ToList();
+            //List<User> users = _context.Users.Where(u => u.IsActive == true).ToList();    
             ObservableCollection<User> result = new ObservableCollection<User>();
             foreach (User user in users)
             {
@@ -95,10 +93,11 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             }
             else
             {
-                User p = _context.Users.Where(i => i.UserID == user.UserID).FirstOrDefault();
-                p.IsActive=false;
-                _context.SaveChanges();
-                User inList = UsersList.FirstOrDefault(i => i.UserID == p.UserID);
+                //User p = _context.Users.Where(i => i.UserID == user.UserID).FirstOrDefault();
+                //p.IsActive=false;
+                //_context.SaveChanges();
+                _context.Database.ExecuteSqlRaw("DeleteUser @p0", parameters: new object[] { user.UserID });
+                User inList = UsersList.FirstOrDefault(i => i.UserID == user.UserID);
                 if (inList != null)
                 {
                     inList.IsActive = false;

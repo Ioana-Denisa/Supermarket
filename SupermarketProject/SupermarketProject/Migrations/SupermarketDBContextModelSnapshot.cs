@@ -286,7 +286,7 @@ namespace SupermarketProject.Migrations
                         .IsRequired();
 
                     b.HasOne("SupermarketProject.Models.Receipt", "Receipt")
-                        .WithMany()
+                        .WithMany("ReceiptItems")
                         .HasForeignKey("ReceiptID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

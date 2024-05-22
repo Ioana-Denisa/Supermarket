@@ -20,6 +20,7 @@ namespace SupermarketProject.Models
         [Required]
         public float Total {  get; set; }
         public virtual User Cashier {  get; set; }
+        public virtual List<ReceiptProducts> ReceiptItems { get; set; }
        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SupermarketProject.ViewModels.Commands;
 using SupermarketProject.Views;
+using SupermarketProject.Views.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace SupermarketProject.ViewModels
 
         public void OpenWindow(object obj)
         {
-            Login login = new Login();
+            Administrator login = new Administrator();
             login.Show();
         }
     }

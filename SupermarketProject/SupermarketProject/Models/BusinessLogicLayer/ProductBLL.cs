@@ -13,17 +13,22 @@ namespace SupermarketProject.Models.BusinessLogicLayer
     {
         private SupermarketDBContext _context = new SupermarketDBContext();
         public ObservableCollection<Product> ProductsList { get; set; }
+        public ObservableCollection<Category> CategorysList { get; set; }
+        public ObservableCollection<Producer> ProducerList { get; set; }
 
         public ProductBLL(SupermarketDBContext context)
         {
             _context = context;
+            ProductsList = GetAll();
+            ProducerList = GetAllProducers();
+            CategorysList = GetAllCategories();
         }
 
         public string ErrorMessage { get; set; }
         public void Add(object obj)
         {
-            Product product = obj as Product;
-            if (_context.Products.FirstOrDefault(p => p.Name == product.Name && p.Barcode == product.Barcode && p.CategoryID==product.CategoryID && p.ProducerID==product.ProducerID && p.IsActive==product.IsActive ) != null)
+            Product product = obj as Product; 
+            if (_context.Products.FirstOrDefault(p => p.Name == product.Name && p.Barcode == product.Barcode && p.CategoryID==product.CategoryID && p.ProducerID==product.ProducerID && p.IsActive==product.IsActive ) != null )
                 ErrorMessage = "Datele acestea deja exista, alegeti altele!";
             else if (product != null)
             {
@@ -45,7 +50,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 }
                 else
                 {
+
                     product.IsActive = true;
+                    product.Producer=_context.Producers.Where(p=>p.ProducerID==product.ProducerID).FirstOrDefault();
+                    product.Category=_context.Categories.Where(c=>c.CategoryID==product.CategoryID).FirstOrDefault();
                     _context.Products.Add(product);
                     _context.SaveChanges();
                     product.ProductID = _context.Products.Max(item => item.ProductID);
@@ -70,7 +78,44 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             foreach (Product prod in product)
             {
                 if(prod.IsActive == true)
+                {
+                    prod.Producer = _context.Producers.Where(p => p.ProducerID == prod.ProducerID).FirstOrDefault();
+                    prod.Category = _context.Categories.Where(c => c.CategoryID == prod.CategoryID).FirstOrDefault();
                     result.Add(prod);
+                }
+            }
+            if (result.Count == 0)
+                return null;
+            return result;
+        }
+
+        public ObservableCollection<Category> GetAllCategories()
+        {
+            List<Category> product = _context.Categories.ToList();
+            ObservableCollection<Category> result = new ObservableCollection<Category>();
+            foreach (Category prod in product)
+            {
+                if (prod.IsActive == true)
+                {
+                    result.Add(prod);
+                }
+            }
+            if (result.Count == 0)
+                return null;
+            return result;
+        }
+
+
+        public ObservableCollection<Producer> GetAllProducers()
+        {
+            List<Producer> product = _context.Producers.ToList();
+            ObservableCollection<Producer> result = new ObservableCollection<Producer>();
+            foreach (Producer prod in product)
+            {
+                if (prod.IsActive == true)
+                {
+                    result.Add(prod);
+                }
             }
             if (result.Count == 0)
                 return null;
@@ -87,9 +132,9 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else if (string.IsNullOrEmpty(product.Barcode))
                 ErrorMessage = "Codul de bare trebuie precizat!";
             else if (string.IsNullOrEmpty(product.Producer.Name))
-                ErrorMessage = "ID-ul producatorul trebuie precizat!";
-            else if (string.IsNullOrEmpty(product.Producer.Name))
-                ErrorMessage = "ID-ul categoriei trebuie precizat!";
+                ErrorMessage = "Numele producatorul trebuie precizat!";
+            else if (string.IsNullOrEmpty(product.Category.Name))
+                ErrorMessage = "Numele categoriei trebuie precizat!";
             else
             {
                 _context.Entry(product).State = EntityState.Modified;

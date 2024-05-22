@@ -49,6 +49,7 @@ namespace SupermarketProject.ViewModels
                 {
                     addCommand = new NonGenericCommand(CreateUser);
                 }
+                UsersList=userBLL.GetAll();
                 return addCommand;
             }
         }
@@ -56,7 +57,8 @@ namespace SupermarketProject.ViewModels
         private void CreateUser(object parameter)
         {
             userBLL.Add(parameter);
-            ErrorMessage=userBLL.ErrorMessage;
+            UsersList = userBLL.GetAll();
+            ErrorMessage = userBLL.ErrorMessage;
         }
 
         public void ClearFiels()
