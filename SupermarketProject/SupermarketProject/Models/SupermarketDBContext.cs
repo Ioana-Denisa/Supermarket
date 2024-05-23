@@ -18,6 +18,7 @@ namespace SupermarketProject.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
+        public DbSet<CategoryTotalPrice> CategoryTotalPrices { get; set; }
         public DbSet<ReceiptProducts> ReceiptProducts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

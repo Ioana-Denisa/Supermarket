@@ -35,13 +35,14 @@ namespace SupermarketProject.ViewModels
             {
                 var producerList = dbContext.Producers.ToList();
                 foreach (var item in producerList)
-                {
-                    Producers.Add(item);
-                }
+                    if(item.IsActive)
+                        Producers.Add(item);
+                
 
                 var categoryList=dbContext.Categories.ToList();
                 foreach(var item in categoryList)
-                    Categories.Add(item);
+                    if(item.IsActive)
+                        Categories.Add(item);
             }
         }
 

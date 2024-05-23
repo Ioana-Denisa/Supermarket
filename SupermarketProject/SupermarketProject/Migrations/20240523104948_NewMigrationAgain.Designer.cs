@@ -10,8 +10,8 @@ using SupermarketProject.Models;
 namespace SupermarketProject.Migrations
 {
     [DbContext(typeof(SupermarketDBContext))]
-    [Migration("20240522170527_AgainMigration")]
-    partial class AgainMigration
+    [Migration("20240523104948_NewMigrationAgain")]
+    partial class NewMigrationAgain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,24 @@ namespace SupermarketProject.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("SupermarketProject.Models.CategoryTotalPrice", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("CategoryTotalPrices");
                 });
 
             modelBuilder.Entity("SupermarketProject.Models.Offer", b =>

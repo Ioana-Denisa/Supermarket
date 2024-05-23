@@ -28,7 +28,7 @@ namespace SupermarketProject.ViewModels
 
         public void OpenWindow(object obj)
         {
-            Administrator login = new Administrator();
+            Login login = new Login();
             login.Show();
         }
     }

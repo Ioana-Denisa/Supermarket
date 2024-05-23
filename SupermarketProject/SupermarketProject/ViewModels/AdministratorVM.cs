@@ -17,6 +17,7 @@ namespace SupermarketProject.ViewModels
         private ICommand producerCommand;
         private ICommand productCommand;
         private ICommand stockCommand;
+
         private ICommand moreCommand;
 
         #region First commands
@@ -138,6 +139,23 @@ namespace SupermarketProject.ViewModels
         private void ProductCategoryW(object obj)
         {
             var w=new ProductsCategoryForProducer();
+            w.Show();
+        }
+
+        private ICommand categoryTotalPriceCommand;
+        public ICommand CategoryTotalPriceCommand
+        {
+            get
+            {
+                if (categoryTotalPriceCommand == null)
+                    categoryTotalPriceCommand =new  NonGenericCommand(CategoryTotalWindow);
+                return categoryTotalPriceCommand;
+            }
+        }
+
+        private void CategoryTotalWindow(object obj)
+        {
+            var w=new CategoryTotalPirce();
             w.Show();
         }
         #endregion

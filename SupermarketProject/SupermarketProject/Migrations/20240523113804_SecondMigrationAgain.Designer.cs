@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SupermarketProject.Models;
 
 namespace SupermarketProject.Migrations
 {
     [DbContext(typeof(SupermarketDBContext))]
-    partial class SupermarketDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240523113804_SecondMigrationAgain")]
+    partial class SecondMigrationAgain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,13 +42,18 @@ namespace SupermarketProject.Migrations
 
             modelBuilder.Entity("SupermarketProject.Models.CategoryTotalPrice", b =>
                 {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("CategoryName")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Total")
                         .HasColumnType("real");
 
-                    b.HasKey("CategoryName");
+                    b.HasKey("ID");
 
                     b.ToTable("CategoryTotalPrices");
                 });

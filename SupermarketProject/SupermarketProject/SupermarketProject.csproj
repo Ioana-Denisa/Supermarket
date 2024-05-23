@@ -164,6 +164,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Admin\CategoryTotalPirce.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\DailyTotalCashier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\MoreOptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Cashier\Cashier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cashier\CashierSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,9 +235,17 @@
     <Compile Include="Migrations\20240522133808_NewMigration.Designer.cs">
       <DependentUpon>20240522133808_NewMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20240522170527_AgainMigration.cs" />
-    <Compile Include="Migrations\20240522170527_AgainMigration.Designer.cs">
-      <DependentUpon>20240522170527_AgainMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20240523104948_NewMigrationAgain.cs" />
+    <Compile Include="Migrations\20240523104948_NewMigrationAgain.Designer.cs">
+      <DependentUpon>20240523104948_NewMigrationAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240523113804_SecondMigrationAgain.cs" />
+    <Compile Include="Migrations\20240523113804_SecondMigrationAgain.Designer.cs">
+      <DependentUpon>20240523113804_SecondMigrationAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240523115731_SecondMigrationAgain1.cs" />
+    <Compile Include="Migrations\20240523115731_SecondMigrationAgain1.Designer.cs">
+      <DependentUpon>20240523115731_SecondMigrationAgain1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SupermarketDBContextModelSnapshot.cs" />
     <Compile Include="Models\BusinessLogicLayer\AdministratorBLL.cs" />
@@ -238,6 +258,7 @@
     <Compile Include="Models\BusinessLogicLayer\StockBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UserBLL.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryTotalPrice.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\Product.cs" />
@@ -247,10 +268,14 @@
     <Compile Include="Models\ReceiptProducts.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\AdministratorVM.cs" />
+    <Compile Include="ViewModels\CashierSearchVM.cs" />
+    <Compile Include="ViewModels\CashierVM.cs" />
+    <Compile Include="ViewModels\CategoryTotalPriceVM.cs" />
     <Compile Include="ViewModels\CategoryVM.cs" />
     <Compile Include="ViewModels\Commands\BasePropertyChanged.cs" />
     <Compile Include="ViewModels\Commands\NonGenericCommand.cs" />
     <Compile Include="ViewModels\Commands\RelayCommand.cs" />
+    <Compile Include="ViewModels\DailyTotalCashierVM.cs" />
     <Compile Include="ViewModels\LargestReceiptVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
@@ -264,6 +289,12 @@
     </Compile>
     <Compile Include="Views\Admin\CategoryAdmin.xaml.cs">
       <DependentUpon>CategoryAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\CategoryTotalPirce.xaml.cs">
+      <DependentUpon>CategoryTotalPirce.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\DailyTotalCashier.xaml.cs">
+      <DependentUpon>DailyTotalCashier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\MoreOptions.xaml.cs">
       <DependentUpon>MoreOptions.xaml</DependentUpon>
@@ -285,6 +316,9 @@
     </Compile>
     <Compile Include="Views\Cashier\Cashier.xaml.cs">
       <DependentUpon>Cashier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cashier\CashierSearch.xaml.cs">
+      <DependentUpon>CashierSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

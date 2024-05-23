@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\App.xaml
-11-1557201502
+14-713181807
 
-62-1254831087
+741877001070
 151-222287571
-Views\Admin\Administrator.xaml;Views\Admin\CategoryAdmin.xaml;Views\Admin\MoreOptions.xaml;Views\Admin\ProducerAdmin.xaml;Views\Admin\ProductAdmin.xaml;Views\Admin\ProductsCategoryForProducer.xaml;Views\Admin\StockAdmin.xaml;Views\Admin\UserAdmin.xaml;Views\Cashier\Cashier.xaml;Views\Login.xaml;Views\MainWindow.xaml;
+Views\Admin\Administrator.xaml;Views\Admin\CategoryAdmin.xaml;Views\Admin\CategoryTotalPirce.xaml;Views\Admin\DailyTotalCashier.xaml;Views\Admin\MoreOptions.xaml;Views\Admin\ProducerAdmin.xaml;Views\Admin\ProductAdmin.xaml;Views\Admin\ProductsCategoryForProducer.xaml;Views\Admin\StockAdmin.xaml;Views\Admin\UserAdmin.xaml;Views\Cashier\Cashier.xaml;Views\Cashier\CashierSearch.xaml;Views\Login.xaml;Views\MainWindow.xaml;
 
 False
 

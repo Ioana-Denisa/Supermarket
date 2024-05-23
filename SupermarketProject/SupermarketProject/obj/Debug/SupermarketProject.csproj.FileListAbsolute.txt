@@ -103,3 +103,9 @@ C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\MoreOptions.baml
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductsCategoryForProducer.g.cs
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\ProductsCategoryForProducer.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\CategoryTotalPirce.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\DailyTotalCashier.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\CategoryTotalPirce.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\DailyTotalCashier.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierSearch.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierSearch.baml
