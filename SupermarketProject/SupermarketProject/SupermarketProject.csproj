@@ -172,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Admin\LargestReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Admin\MoreOptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,7 +204,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Cashier\CashierAddReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Cashier\CashierSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cashier\CashierViewReceipts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -268,7 +280,9 @@
     <Compile Include="Models\ReceiptProducts.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ViewModels\AdministratorVM.cs" />
+    <Compile Include="ViewModels\CashierAddReceiptVM.cs" />
     <Compile Include="ViewModels\CashierSearchVM.cs" />
+    <Compile Include="ViewModels\CashierViewReceiptsVM.cs" />
     <Compile Include="ViewModels\CashierVM.cs" />
     <Compile Include="ViewModels\CategoryTotalPriceVM.cs" />
     <Compile Include="ViewModels\CategoryVM.cs" />
@@ -296,6 +310,9 @@
     <Compile Include="Views\Admin\DailyTotalCashier.xaml.cs">
       <DependentUpon>DailyTotalCashier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\LargestReceipt.xaml.cs">
+      <DependentUpon>LargestReceipt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\MoreOptions.xaml.cs">
       <DependentUpon>MoreOptions.xaml</DependentUpon>
     </Compile>
@@ -317,8 +334,14 @@
     <Compile Include="Views\Cashier\Cashier.xaml.cs">
       <DependentUpon>Cashier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Cashier\CashierAddReceipt.xaml.cs">
+      <DependentUpon>CashierAddReceipt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Cashier\CashierSearch.xaml.cs">
       <DependentUpon>CashierSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cashier\CashierViewReceipts.xaml.cs">
+      <DependentUpon>CashierViewReceipts.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

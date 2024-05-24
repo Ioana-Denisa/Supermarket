@@ -109,3 +109,9 @@ C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\DailyTotalCashier.baml
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierSearch.g.cs
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierSearch.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierAddReceipt.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierAddReceipt.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierViewReceipts.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Cashier\CashierViewReceipts.baml
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\LargestReceipt.g.cs
+C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\obj\Debug\Views\Admin\LargestReceipt.baml

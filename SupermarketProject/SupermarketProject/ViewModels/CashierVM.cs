@@ -26,7 +26,41 @@ namespace SupermarketProject.ViewModels
         private void SearchWindow(object obj)
         {
             var w = new CashierSearch();
-            w.Show();
+            w.ShowDialog();
+        }
+
+        private ICommand addReceipt;
+        public ICommand AddReceipt
+        {
+            get
+            {
+                if (addReceipt == null)
+                    addReceipt=new NonGenericCommand(AddReceiptWindow);
+                return addReceipt;
+            }
+
+        }
+        private void AddReceiptWindow(object obj)
+        {
+            var w = new CashierAddReceipt();
+            w.ShowDialog();
+        }
+
+        private ICommand viewReceipts;
+        public ICommand ViewReceipts
+        {
+            get
+            {
+                if (viewReceipts == null)
+                    viewReceipts = new NonGenericCommand(ViewReceiptsWindow);
+                return viewReceipts;
+            }
+
+        }
+        private void ViewReceiptsWindow(object obj)
+        {
+            var w = new CashierViewReceipts();
+            w.ShowDialog();
         }
     }
 }

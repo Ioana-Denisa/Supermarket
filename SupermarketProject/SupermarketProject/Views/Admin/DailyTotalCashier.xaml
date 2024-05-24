@@ -19,7 +19,13 @@
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Margin="36,204,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
         <ComboBox Name="cbxCashier" HorizontalAlignment="Left" Margin="70,114,0,0" VerticalAlignment="Top" Width="165" ItemsSource="{Binding Cashiers}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedUser}" Height="25"/>
-        <ComboBox Name="cbxYear" HorizontalAlignment="Left" Margin="290,107,0,0" VerticalAlignment="Top" Width="165" ItemsSource="{Binding Date}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedMonth}" Height="27"/>
+        <ComboBox Name="cbxYear" HorizontalAlignment="Left" Margin="290,107,0,0" VerticalAlignment="Top" Width="165" ItemsSource="{Binding Date}" DisplayMemberPath="" SelectedItem="{Binding SelectedMonth}" Height="27">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=., StringFormat='{}{0:MMMM}'}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="65,66,0,0" TextWrapping="Wrap" Text="Search Cashier" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="26" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock HorizontalAlignment="Left" Margin="283,66,0,0" TextWrapping="Wrap" Text="Search Months" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="26" FontWeight="Bold" FontStyle="Italic"/>
     </Grid>

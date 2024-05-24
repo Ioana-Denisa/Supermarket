@@ -30,14 +30,14 @@
             <TextBlock TextWrapping="Wrap" Text="Producer name" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
             <TextBlock TextWrapping="Wrap" Text="Category name" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
         </StackPanel>
-        <StackPanel Margin="395,2,135,226" >
+        <StackPanel Margin="395,2,135,226">
             <TextBox x:Name="txtProductName" TextWrapping="Wrap" Text="{Binding ProductName}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
             <TextBox x:Name="txtBarcode" TextWrapping="Wrap" Text="{Binding Barcode}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
-            <TextBox x:Name="txtDate" TextWrapping="Wrap" Text="{Binding ExpirationDate}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
-            <ComboBox Name="cbxProducers" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Producers}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding Producer.Name}"/>
-            <ComboBox Name="cbxCategoies" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding Category.Name}"/>
+            <DatePicker x:Name="dpExpirationDate" SelectedDate="{Binding ExpirationDate}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
+            <ComboBox Name="cbxProducers" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Producers}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding ProducerName, Mode=TwoWay}"/>
+            <ComboBox Name="cbxCategories" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding CategoryName, Mode=TwoWay}"/>
         </StackPanel>
-        <DataGrid Name="stockGrid" Margin="40,309,110,15" AutoGenerateColumns="False"  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Producers}" >
+        <DataGrid Name="stockGrid" Margin="40,309,110,15" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProductsList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Product name" Binding="{Binding ProductName}" />
                 <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}"/>

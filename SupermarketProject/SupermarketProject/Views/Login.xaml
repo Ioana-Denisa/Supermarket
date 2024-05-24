@@ -15,15 +15,15 @@
             <TextBox Text="{Binding Username}" HorizontalAlignment="Left" Margin="119,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Height="25" BorderBrush="#FF0D5FA5"  FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" />
             <TextBlock HorizontalAlignment="Left" Margin="0,2,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-         
+
             <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="119,140,0,0" VerticalAlignment="Top" BorderBrush="White" Background="#FF0D5FA5" Foreground="White" FontFamily="Times New Roman" FontSize="20" Height="30" FontWeight="Bold" FontStyle="Italic" Width="203" Command="{Binding LoginCommand}" />
             <ComboBox x:Name="cbRole" HorizontalAlignment="Left" Margin="119,90,0,0" VerticalAlignment="Top" Width="200" Height="25" SelectedItem="{Binding Type}" BorderBrush="#FF0D5FA5" >
                 <ComboBoxItem Content="Administrator"  FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" />
                 <ComboBoxItem Content="Cashier"  FontFamily="Times New Roman" FontSize="14" FontWeight="Bold"/>
             </ComboBox>
-               
+
             <TextBlock HorizontalAlignment="Left" Margin="0,90,0,0" TextWrapping="Wrap" Text="Role" VerticalAlignment="Top" Foreground="#FF0D5FA5" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBox Text="{Binding Password}"  HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Height="25" BorderBrush="#FF0D5FA5" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold"/>
+            <TextBox Text="{Binding Password}"  HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Height="25" BorderBrush="#FF0D5FA5" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold"  />
         </Grid>
     </Grid>
 </Window>

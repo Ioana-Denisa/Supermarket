@@ -55,7 +55,6 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public ObservableCollection<User> GetAll()
         {
              List<User> users = _context.Users.FromSqlRaw("GetAllUsers").ToList();
-            //List<User> users = _context.Users.Where(u => u.IsActive == true).ToList();    
             ObservableCollection<User> result = new ObservableCollection<User>();
             foreach (User user in users)
             {
@@ -93,9 +92,6 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             }
             else
             {
-                //User p = _context.Users.Where(i => i.UserID == user.UserID).FirstOrDefault();
-                //p.IsActive=false;
-                //_context.SaveChanges();
                 _context.Database.ExecuteSqlRaw("DeleteUser @p0", parameters: new object[] { user.UserID });
                 User inList = UsersList.FirstOrDefault(i => i.UserID == user.UserID);
                 if (inList != null)

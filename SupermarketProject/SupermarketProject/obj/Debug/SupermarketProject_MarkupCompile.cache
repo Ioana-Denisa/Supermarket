@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\App.xaml
-14-713181807
+17-1762068137
 
-741877001070
+79102813529
 151-222287571
-Views\Admin\Administrator.xaml;Views\Admin\CategoryAdmin.xaml;Views\Admin\CategoryTotalPirce.xaml;Views\Admin\DailyTotalCashier.xaml;Views\Admin\MoreOptions.xaml;Views\Admin\ProducerAdmin.xaml;Views\Admin\ProductAdmin.xaml;Views\Admin\ProductsCategoryForProducer.xaml;Views\Admin\StockAdmin.xaml;Views\Admin\UserAdmin.xaml;Views\Cashier\Cashier.xaml;Views\Cashier\CashierSearch.xaml;Views\Login.xaml;Views\MainWindow.xaml;
+Views\Admin\Administrator.xaml;Views\Admin\CategoryAdmin.xaml;Views\Admin\CategoryTotalPirce.xaml;Views\Admin\DailyTotalCashier.xaml;Views\Admin\LargestReceipt.xaml;Views\Admin\MoreOptions.xaml;Views\Admin\ProducerAdmin.xaml;Views\Admin\ProductAdmin.xaml;Views\Admin\ProductsCategoryForProducer.xaml;Views\Admin\StockAdmin.xaml;Views\Admin\UserAdmin.xaml;Views\Cashier\Cashier.xaml;Views\Cashier\CashierAddReceipt.xaml;Views\Cashier\CashierSearch.xaml;Views\Cashier\CashierViewReceipts.xaml;Views\Login.xaml;Views\MainWindow.xaml;
 
 False
 

@@ -1,6 +1,7 @@
 ﻿using SupermarketProject.ViewModels.Commands;
 using SupermarketProject.Views;
 using SupermarketProject.Views.Admin;
+using SupermarketProject.Views.Cashier;
 using System;
 using System.Collections.Generic;
 using System.Linq;

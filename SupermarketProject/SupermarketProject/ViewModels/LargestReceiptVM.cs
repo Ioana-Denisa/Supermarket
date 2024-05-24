@@ -9,20 +9,28 @@ using System.Threading.Tasks;
 
 namespace SupermarketProject.ViewModels
 {
-    public class LargestReceiptVM:BasePropertyChanged
+    public class LargestReceiptVM : BasePropertyChanged
     {
-        private SupermarketDBContext _context=new SupermarketDBContext();
+        private SupermarketDBContext _context = new SupermarketDBContext();
         private DateTime selectedDate;
         private string receiptDetails;
+        private Receipt largestReceipt;
+        private string error;
+
+        public LargestReceiptVM()
+        {
+            largestReceipt=new Receipt();
+            SetLargestReceipt();
+        }
 
         public string ReceiptDetails
         {
-            get=>receiptDetails;
+            get => receiptDetails;
             set
             {
-                if(receiptDetails != value)
+                if (receiptDetails != value)
                 {
-                    receiptDetails= value;
+                    receiptDetails = value;
                     NotifyPropertyChanged("ReceiptDetails");
 
                 }
@@ -31,21 +39,56 @@ namespace SupermarketProject.ViewModels
 
         public DateTime SelectedDate
         {
-            get=> selectedDate;
+            get => selectedDate;
             set
             {
-                if(selectedDate != value)
+                if (selectedDate != value)
                 {
-                    selectedDate= value;
+                    selectedDate = value;
                     NotifyPropertyChanged("SelectedDate");
                 }
             }
         }
 
-        private void LargestReceipt()
+
+        public Receipt LargestReceipt
         {
-            var date = SelectedDate.Date;
-                
+            get => largestReceipt;
+            set
+            {
+                largestReceipt = value;
+                NotifyPropertyChanged("LargestReceipt");
+            }
+        }
+
+        public string ErrorMessage
+        {
+            get => error;
+            set
+            {
+                error=value;
+                NotifyPropertyChanged("ErrorMessage");
+            }
+        }
+
+        private void SetLargestReceipt()
+        {
+            if (SelectedDate != null)
+            {
+                var largestReceipt = _context.Receipts
+                    .Where(r => EF.Functions.DateDiffDay(r.ReleseDate, SelectedDate) == 0)
+                    .OrderByDescending(r => r.Total)
+                    .FirstOrDefault();
+
+                if (largestReceipt != null)
+                {
+                    LargestReceipt = largestReceipt;
+                }
+                else
+                {
+                    ErrorMessage = "Bonul este null";
+                }
+            }
         }
     }
 }

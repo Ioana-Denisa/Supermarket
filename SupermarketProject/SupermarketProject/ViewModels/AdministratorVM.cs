@@ -1,6 +1,7 @@
 ﻿using SupermarketProject.Models.EntityLayer;
 using SupermarketProject.ViewModels.Commands;
 using SupermarketProject.Views.Admin;
+using SupermarketProject.Views.Cashier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace SupermarketProject.ViewModels
         private void UserWindow(object parameter)
         {
             var user = new UserAdmin();
-            user.Show();
+            user.ShowDialog();
 
         }
 
@@ -55,7 +56,7 @@ namespace SupermarketProject.ViewModels
         private void CategoryWindow(object obj)
         {
             var category = new CategoryAdmin();
-            category.Show();
+            category.ShowDialog();
         }
 
         public ICommand StockCommand
@@ -73,7 +74,7 @@ namespace SupermarketProject.ViewModels
         private void StockWindow(object obj)
         {
             var stock = new StockAdmin();
-            stock.Show();
+            stock.ShowDialog();
         }
 
         public ICommand ProductCommand
@@ -89,7 +90,7 @@ namespace SupermarketProject.ViewModels
         private void ProductWindow(object obj)
         {
             var product = new ProductAdmin();
-            product.Show();
+            product.ShowDialog();
         }
 
         public ICommand ProducerCommand
@@ -105,7 +106,7 @@ namespace SupermarketProject.ViewModels
         private void ProducerWindow(object obj)
         {
             var producer = new ProducerAdmin();
-            producer.Show();
+            producer.ShowDialog();
         }
 
         public ICommand MoreCommand
@@ -120,8 +121,30 @@ namespace SupermarketProject.ViewModels
         private void MoreWindow(object obj)
         {
             var more = new MoreOptions();
-            more.Show();
+            more.ShowDialog();
         }
+
+
+
+
+        private ICommand largestRecept;
+        public ICommand LargestRecept
+        {
+            get
+            {
+                if (largestRecept == null)
+                    largestRecept = new NonGenericCommand(LargestReceptWindow);
+                return largestRecept;
+            }
+
+        }
+        private void LargestReceptWindow(object obj)
+        {
+            var w = new LargestReceipt();
+            w.ShowDialog();
+        }
+
+
         #endregion
 
         #region Second Commands
@@ -139,7 +162,7 @@ namespace SupermarketProject.ViewModels
         private void ProductCategoryW(object obj)
         {
             var w=new ProductsCategoryForProducer();
-            w.Show();
+            w.ShowDialog();
         }
 
         private ICommand categoryTotalPriceCommand;
@@ -156,9 +179,49 @@ namespace SupermarketProject.ViewModels
         private void CategoryTotalWindow(object obj)
         {
             var w=new CategoryTotalPirce();
-            w.Show();
+            w.ShowDialog();
         }
+
+
+        private ICommand dailyTotalCashier;
+        public ICommand DailyTotalCashier
+        {
+            get
+            {
+                if (dailyTotalCashier == null)
+                    dailyTotalCashier = new NonGenericCommand(DayliCashierWindow);
+                return dailyTotalCashier;
+            }
+        }
+
+        private void DayliCashierWindow(object obj)
+        {
+            var w = new DailyTotalCashier();
+            w.ShowDialog();
+        }
+
+
         #endregion
+
+
+        private ICommand viewReceipts;
+        public ICommand ViewReceipts
+        {
+            get
+            {
+                if (viewReceipts == null)
+                    viewReceipts = new NonGenericCommand(ViewReceiptsWindow);
+                return viewReceipts;
+            }
+
+        }
+        private void ViewReceiptsWindow(object obj)
+        {
+            var w = new CashierViewReceipts();
+            w.ShowDialog();
+        }
+
+
 
     }
 }

@@ -12,17 +12,17 @@ using System.Windows.Input;
 
 namespace SupermarketProject.ViewModels
 {
-    public class CashierSearchVM:BasePropertyChanged
+    public class CashierSearchVM : BasePropertyChanged
     {
         private string productName;
         private string barcode;
-        private DateTime expirationDate;
-        private ObservableCollection< Producer >producers;
-        private ObservableCollection<Category >categories;
-        private Producer producer;
-        private Category category;
+        private DateTime? expirationDate;
+        private ObservableCollection<Producer> producers;
+        private ObservableCollection<Category> categories;
+        private string producerName;
+        private string categoryName;
 
-        public ObservableCollection<SearchProductResult> Products {  get; set; }=new ObservableCollection<SearchProductResult>();
+        public ObservableCollection<SearchProductResult> ProductsList { get; set; } = new ObservableCollection<SearchProductResult>();
 
         public string ProductName
         {
@@ -32,15 +32,18 @@ namespace SupermarketProject.ViewModels
 
         public string Barcode
         {
-            get=>barcode;
+            get => barcode;
             set { barcode = value; NotifyPropertyChanged("Barcode"); }
         }
 
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
             get => expirationDate;
-            set { expirationDate = value;
-                NotifyPropertyChanged("ExpirationDate"); }
+            set
+            {
+                expirationDate = value;
+                NotifyPropertyChanged("ExpirationDate");
+            }
         }
 
         public ObservableCollection<Producer> Producers
@@ -53,23 +56,23 @@ namespace SupermarketProject.ViewModels
             }
         }
 
-        public Producer Producer
+        public string ProducerName
         {
-            get => producer;
+            get => producerName;
             set
             {
-                producer = value;
-                NotifyPropertyChanged("Producer");
+                producerName = value;
+                NotifyPropertyChanged("ProducerName");
             }
         }
 
-        public Category Category
+        public string CategoryName
         {
-            get => category;
+            get => categoryName;
             set
             {
-                category = value;
-                NotifyPropertyChanged("Category");
+                categoryName = value;
+                NotifyPropertyChanged("CategoryName");
             }
         }
 
@@ -89,7 +92,7 @@ namespace SupermarketProject.ViewModels
             get
             {
                 if (searchCommand == null)
-                    searchCommand = new NonGenericCommand(InitializeProducts);
+                    searchCommand = new NonGenericCommand(SearchProducts);
                 return searchCommand;
             }
         }
@@ -98,21 +101,23 @@ namespace SupermarketProject.ViewModels
         {
             Initialize();
         }
+
         public void Initialize()
         {
-            Categories=new ObservableCollection<Category>();
+            Categories = new ObservableCollection<Category>();
             Producers = new ObservableCollection<Producer>();
+
             using (var dbContext = new SupermarketDBContext())
             {
-               var catList=dbContext.Categories.ToList();
+                var catList = dbContext.Categories.ToList();
                 foreach (var item in catList)
                 {
-                    if(item.IsActive)
-                      Categories.Add(item);
+                    if (item.IsActive)
+                        Categories.Add(item);
                 }
 
                 var prodList = dbContext.Producers.ToList();
-                foreach(var item in prodList)
+                foreach (var item in prodList)
                 {
                     if (item.IsActive)
                         Producers.Add(item);
@@ -120,7 +125,7 @@ namespace SupermarketProject.ViewModels
             }
         }
 
-        public List<SearchProductResult> SearchProducts(string productName, string barcode, DateTime? expirationDate, string producerName, string categoryName)
+        public void SearchProducts(object obj)
         {
             using (var dbContext = new SupermarketDBContext())
             {
@@ -130,7 +135,7 @@ namespace SupermarketProject.ViewModels
                             join stock in dbContext.Stocks on product.ProductID equals stock.ProductID
                             where (string.IsNullOrEmpty(productName) || product.Name == productName)
                                   && (string.IsNullOrEmpty(barcode) || product.Barcode == barcode)
-                                  && (!expirationDate.HasValue || stock.ExpirationDate == expirationDate)
+                                  && (!expirationDate.HasValue || stock.ExpirationDate == expirationDate.Value)
                                   && (string.IsNullOrEmpty(producerName) || producer.Name == producerName)
                                   && (string.IsNullOrEmpty(categoryName) || category.Name == categoryName)
                             orderby product.Name
@@ -143,16 +148,9 @@ namespace SupermarketProject.ViewModels
                                 CategoryName = category.Name
                             };
 
-                return query.ToList();
-            }
-        }
-
-        public void InitializeProducts(object obj)
-        {
-            List<SearchProductResult> list = SearchProducts(ProductName, Barcode, ExpirationDate, Producer.Name, Category.Name);
-            foreach(SearchProductResult result in list)
-            {
-                Products.Add(result);
+                var products = query.ToList();
+                ProductsList.Clear();
+                products.ForEach(p => ProductsList.Add(p));
             }
         }
     }
