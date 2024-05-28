@@ -79,7 +79,7 @@ namespace SupermarketProject.ViewModels
 
         public DailyTotalCashierVM()
         {
-            Cashiers = new ObservableCollection<User>(_context.Users.Where(u => u.Type == "Cashier").ToList());
+            Cashiers = new ObservableCollection<User>(_context.Users.Where(u => u.Type == "Cashier" && u.IsActive==true).ToList());
             InitializeDatesForCurrentYear();
             InitializeMonthsAndYears();
             DailyTotals = new ObservableCollection<DailyTotal>();

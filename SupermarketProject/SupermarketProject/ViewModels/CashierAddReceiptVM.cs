@@ -31,6 +31,7 @@ namespace SupermarketProject.ViewModels
         public CashierAddReceiptVM()
         {
             InitializeUsersProducts();
+            ReceiptProducts.CollectionChanged += (s, e) => CalculateTotalReceipt();
         }
 
         public string ErrorMessage
@@ -169,7 +170,7 @@ namespace SupermarketProject.ViewModels
                 { 
                     UserID = Cashier.UserID,
                     ReleseDate=DateTime.Now,
-                    Total = ReceiptProducts.Sum(rp => rp.Subtotal)
+                    Total = Total
                 };
                 _context.Receipts.Add(newReceipt);
                 _context.SaveChanges();
@@ -188,5 +189,9 @@ namespace SupermarketProject.ViewModels
             ReceiptProducts.Clear();
         }
 
+        private void CalculateTotalReceipt()
+        {
+            Total = ReceiptProducts.Sum(receipt => receipt.Subtotal);
+        }
     }
 }

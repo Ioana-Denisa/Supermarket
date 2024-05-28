@@ -77,7 +77,7 @@
                 <DataGridTemplateColumn Header="Producer" Width="140">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Producer.Name}"/>
+                            <TextBlock Text="{Binding Producer.Name}" Width="140" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>

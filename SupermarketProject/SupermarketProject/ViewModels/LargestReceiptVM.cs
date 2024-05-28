@@ -111,12 +111,12 @@ namespace SupermarketProject.ViewModels
                 }
                 else
                 {
-                    ErrorMessage = "Bonul este null";
+                    ErrorMessage = "Nu exista bon in aceasta data";
                 }
             }
             else
             {
-                ErrorMessage = "SelectedDate este null";
+                ErrorMessage = "Data selectata este nula";
             }
         }
     }
