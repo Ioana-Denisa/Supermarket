@@ -10,21 +10,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SupermarketProject.ViewModels
 {
-    public class LoginVM:BasePropertyChanged
+    public class LoginVM : BasePropertyChanged
     {
         private string _username;
         private string _password;
         private string _type;
         public string Username
         {
-            get { return _username; }
-        set { _username = value; 
-            NotifyPropertyChanged(nameof(Username));}
-        
+            get => _username;
+            set
+            {
+                _username = value;
+                NotifyPropertyChanged(nameof(Username));
+            }
+
         }
 
         public string Password
@@ -33,7 +38,7 @@ namespace SupermarketProject.ViewModels
             set
             {
                 _password = value;
-               NotifyPropertyChanged(nameof(Password));
+                NotifyPropertyChanged(nameof(Password));
             }
         }
 
@@ -47,32 +52,32 @@ namespace SupermarketProject.ViewModels
             }
         }
 
-        public ICommand LoginCommand { get;  }
+        public ICommand LoginCommand { get; }
         private UserBLL userBLL;
 
         public LoginVM()
         {
-            userBLL=new UserBLL(new SupermarketDBContext());
-            LoginCommand=new NonGenericCommand(Login);
+            userBLL = new UserBLL(new SupermarketDBContext());
+            LoginCommand = new NonGenericCommand(Login);
         }
 
         private void Login(object parameter)
         {
             var user = userBLL.Authenticate(Username, Password);
-            
-            if(user!=null)
+
+            if (user != null)
             {
                 if (user.IsActive == false)
                     MessageBox.Show("This user is INACTIV!");
-                else if (user.Type =="Administrator" && Type.Contains("Administrator"))
+                else if (user.Type == "Administrator" && Type.Contains("Administrator"))
                 {
                     var admin = new Administrator();
-                    admin.Show();
+                    admin.ShowDialog();
                 }
                 else if (user.Type == "Cashier" && Type.Contains("Cashier"))
                 {
                     var cashier = new Cashier();
-                    cashier.Show();
+                    cashier.ShowDialog();
                 }
                 else
                 {
@@ -83,7 +88,7 @@ namespace SupermarketProject.ViewModels
             {
                 MessageBox.Show("The USERNAME or PASSWORD is incorrect!");
             }
-           
+
         }
     }
 }

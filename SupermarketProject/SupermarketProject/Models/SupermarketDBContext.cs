@@ -22,7 +22,7 @@ namespace SupermarketProject.Models
         public DbSet<ReceiptProducts> ReceiptProducts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=IOAANA\SQLEXPRESS;Database=SupermarketAplication;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer(@"Server=IOAANA\SQLEXPRESS;Database=SupermarketAplication;Trusted_Connection=True;Connection Timeout=90");
         }
 
     }

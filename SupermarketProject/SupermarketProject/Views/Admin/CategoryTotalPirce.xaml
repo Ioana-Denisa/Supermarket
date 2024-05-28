@@ -10,12 +10,14 @@
     <Window.DataContext>
         <local:CategoryTotalPriceVM/>
     </Window.DataContext>
-    <Grid>
-        <DataGrid Name="totalGrid" Margin="95,249,230,35" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding CategoryTotalPrices}" >
+    <Grid  Background="#7F5F7C">
+        <DataGrid Name="totalGrid" Margin="85,129,125,130"  FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding CategoryTotalPrices}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Category name" Binding="{Binding CategoryName}" />
-                <DataGridTextColumn Header="Total price" Binding="{Binding Total, StringFormat='{}{0:C}'}" Width="*" />
+                <DataGridTextColumn Header="Category name" Width="260" Binding="{Binding CategoryName}" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Total price" Binding="{Binding Total, StringFormat='{}{0:C}'}" Width="200"  FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="20,4,0,0" TextWrapping="Wrap" Text="TOTAL PRICE PER CATEGORY
+" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" Width="775"/>
     </Grid>
 </Window>

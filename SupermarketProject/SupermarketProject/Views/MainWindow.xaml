@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="550" Width="800">
+    <Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="C:\Users\Ioana\Desktop\Supermarket project\SupermarketProject\SupermarketProject\Images\supermarket.png" AlignmentX="Left" AlignmentY="Top" />

@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SupermarketProject.Models;
 using SupermarketProject.Models.EntityLayer;
+using SupermarketProject.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SupermarketProject.ViewModels
 {
@@ -13,30 +15,16 @@ namespace SupermarketProject.ViewModels
     {
         private SupermarketDBContext _context = new SupermarketDBContext();
         private DateTime selectedDate;
-        private string receiptDetails;
         private Receipt largestReceipt;
         private string error;
+        private List<ReceiptProducts> receiptProducts;
+
 
         public LargestReceiptVM()
         {
-            largestReceipt=new Receipt();
-            SetLargestReceipt();
+            largestReceipt = new Receipt();
+            receiptProducts = new List<ReceiptProducts>();
         }
-
-        public string ReceiptDetails
-        {
-            get => receiptDetails;
-            set
-            {
-                if (receiptDetails != value)
-                {
-                    receiptDetails = value;
-                    NotifyPropertyChanged("ReceiptDetails");
-
-                }
-            }
-        }
-
         public DateTime SelectedDate
         {
             get => selectedDate;
@@ -50,6 +38,18 @@ namespace SupermarketProject.ViewModels
             }
         }
 
+        public List<ReceiptProducts> ReceiptProducts
+        {
+            get => receiptProducts;
+            set
+            {
+                if (receiptProducts != value)
+                {
+                    receiptProducts = value;
+                    NotifyPropertyChanged("ReceiptProducts");
+                }
+            }
+        }
 
         public Receipt LargestReceipt
         {
@@ -66,29 +66,59 @@ namespace SupermarketProject.ViewModels
             get => error;
             set
             {
-                error=value;
+                error = value;
                 NotifyPropertyChanged("ErrorMessage");
             }
         }
+        private ICommand search;
+        public ICommand Search
+        {
+            get
+            {
+                if (search == null)
+                {
+                    search = new NonGenericCommand(SetLargestReceipt);
+                }
+                return search;
+            }
+        }
 
-        private void SetLargestReceipt()
+
+        private void SetLargestReceipt(object obj)
         {
             if (SelectedDate != null)
             {
+                DateTime normalizedSelectedDate = SelectedDate.Date;
+
                 var largestReceipt = _context.Receipts
-                    .Where(r => EF.Functions.DateDiffDay(r.ReleseDate, SelectedDate) == 0)
+                    .Include(r => r.Cashier)
+                    .Include(r => r.ReceiptItems)
+                    .Where(r => r.ReleseDate.Date == normalizedSelectedDate)
                     .OrderByDescending(r => r.Total)
                     .FirstOrDefault();
 
                 if (largestReceipt != null)
                 {
                     LargestReceipt = largestReceipt;
+                    foreach(var r in largestReceipt.ReceiptItems)
+                    {
+                        var p = _context.Products.Where(i => i.ProductID == r.ProductID).FirstOrDefault();
+                        r.Product = p;
+                    }
+                    ReceiptProducts = largestReceipt.ReceiptItems;
+             
+                    ErrorMessage = null;
                 }
                 else
                 {
                     ErrorMessage = "Bonul este null";
                 }
             }
+            else
+            {
+                ErrorMessage = "SelectedDate este null";
+            }
         }
     }
+
 }

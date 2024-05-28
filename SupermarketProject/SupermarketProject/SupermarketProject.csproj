@@ -172,7 +172,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\LargestReceipt.xaml">
+    <Page Include="Views\Admin\LargestReceiptCashier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,7 +264,6 @@
     <Compile Include="Models\BusinessLogicLayer\CategoryBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProducerBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProductBLL.cs" />
-    <Compile Include="Models\BusinessLogicLayer\ProductsCategoryForProducer.cs" />
     <Compile Include="Models\BusinessLogicLayer\ReceiptBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ReceiptProductsBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\StockBLL.cs" />
@@ -310,8 +309,8 @@
     <Compile Include="Views\Admin\DailyTotalCashier.xaml.cs">
       <DependentUpon>DailyTotalCashier.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\LargestReceipt.xaml.cs">
-      <DependentUpon>LargestReceipt.xaml</DependentUpon>
+    <Compile Include="Views\Admin\LargestReceiptCashier.xaml.cs">
+      <DependentUpon>LargestReceiptCashier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\MoreOptions.xaml.cs">
       <DependentUpon>MoreOptions.xaml</DependentUpon>

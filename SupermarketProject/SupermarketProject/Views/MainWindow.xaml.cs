@@ -24,7 +24,6 @@ namespace SupermarketProject.Views
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowVM();
         }
     }
 }

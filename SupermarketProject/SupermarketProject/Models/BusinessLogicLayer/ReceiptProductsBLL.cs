@@ -78,28 +78,6 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             return result;
         }
 
-        //public void Update(object obj)
-        //{
-        //    ReceiptProducts s = obj as ReceiptProducts;
-        //    if (s == null)
-        //        ErrorMessage = "Selecteaza un bon!";
-        //    else if (s.ReceiptID==null)
-        //        ErrorMessage = "ID-ul bonului trebuie precizat!";
-        //    else if (s.ProductID == null)
-        //    {
-        //        ErrorMessage = "ID-ul produsului trebuie precizat!";
-        //    }
-        //    else if (s.Quantity == null)
-        //    {
-        //        ErrorMessage = "Cantitatea trebuie precizata!";
-        //    }
-        //    else
-        //    {
-        //        _context.Entry(s).State = EntityState.Modified;
-        //        _context.SaveChanges();
-        //    }
-
-        //}
 
         public void Sell(object obj)
         {

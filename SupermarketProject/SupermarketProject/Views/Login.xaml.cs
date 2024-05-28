@@ -23,10 +23,6 @@ namespace SupermarketProject.Views
         public Login()
         {
             InitializeComponent();
-            DataContext = new LoginVM();
-
         }
-
-
     }
 }

@@ -21,9 +21,19 @@ namespace SupermarketProject.ViewModels
         private ObservableCollection<Category> categories;
         private string producerName;
         private string categoryName;
-
+        private string errorMessage;
         public ObservableCollection<SearchProductResult> ProductsList { get; set; } = new ObservableCollection<SearchProductResult>();
 
+
+        public string ErrorMessage
+        {
+            get => errorMessage;
+            set
+            {
+                errorMessage = value;
+                NotifyPropertyChanged("ErrorMessage");
+            }
+        }
         public string ProductName
         {
             get => productName;

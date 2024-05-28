@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SupermarketProject.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for LargestReceipt.xaml
+    /// Interaction logic for LargestReceiptCashier.xaml
     /// </summary>
-    public partial class LargestReceipt : Window
+    public partial class LargestReceiptCashier : Window
     {
-        public LargestReceipt()
+        public LargestReceiptCashier()
         {
             InitializeComponent();
         }

@@ -3,45 +3,58 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:SupermarketProject.ViewModels"
+        xmlns:local="clr-namespace:SupermarketProject.ViewModels"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ChasierViewReceipts" Height="550" Width="800">
+        Title="CashierViewReceipts" Height="550" Width="800">
     <Window.DataContext>
         <local:CashierViewReceiptsVM/>
     </Window.DataContext>
     <Grid Background="#7F5F7C">
-        <ListView ItemsSource="{Binding Receipts}" Margin="20,10,0,10" d:ItemsSource="{d:SampleData ItemCount=5}" >
+        <ListView ItemsSource="{Binding Receipts}" Margin="20,10,0,10" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="#C68FC0" BorderBrush="#CCCCCC" BorderThickness="4" CornerRadius="20"  Height="160" Width="600">
-                        <Grid>
+                    <Border Background="#C68FC0" BorderBrush="#CCCCCC" BorderThickness="4" CornerRadius="20" Height="Auto" Width="700" Margin="0,0,0,10">
+                        <Grid Margin="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Border Background="#8F4C88" CornerRadius="20" Padding="10" Margin="0,0,0,82">
-                                <TextBlock Text="{Binding ReleseDate, StringFormat='Release Date: {0:MM/dd/yyyy}'}" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" />
-                            </Border>
-                            <ItemsControl ItemsSource="{Binding ReceiptItems}" Margin="0,41,3,0" Grid.RowSpan="2">
+
+                            <!-- Header -->
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Product Name" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10"/>
+                                <TextBlock Grid.Column="1" Text="Quantity" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10"/>
+                                <TextBlock Grid.Column="2" Text="Subtotal" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10"/>
+                            </Grid>
+
+                            <!-- Items -->
+                            <ItemsControl Grid.Row="1" ItemsSource="{Binding ReceiptItems}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0" Text="{Binding ProductID,StringFormat='ProductID: {0}'}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10 0 0 0"/>
-                                            <TextBlock Grid.Column="1" Text=" x " FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Grid.ColumnSpan="2" Margin="63,2,200,-2"/>
-                                            <TextBlock Grid.Column="2" Text="{Binding Quantity,StringFormat='Quantity: {0}'}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="130,-3,-130,3"/>
-                                            <TextBlock Grid.Column="2" Text="{Binding Subtotal, StringFormat='Subtotal: {0:C}'}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="284,0,-274,0"/>
+                                            <TextBlock Grid.Column="0" Text="{Binding Product.Name}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Quantity}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding Subtotal, StringFormat='Subtotal: {0:C}'}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Margin="10"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                            <TextBlock  Text="{Binding Total, StringFormat='Total: {0:C}'}" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Margin="469,127,-182,-63" Grid.RowSpan="2" />
 
+                            <TextBlock Grid.Row="2" Text="{Binding Total, StringFormat='Total: {0:C}'}" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Right" Margin="10"/>
+                            <TextBlock Grid.Row="2" Text="{Binding ReleseDate, StringFormat={}{0:dd-MM-yyyy}}" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Left" Margin="10"/>
+                            <TextBlock Grid.Row="2" Text="{Binding Cashier.Name}" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" Margin="10"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

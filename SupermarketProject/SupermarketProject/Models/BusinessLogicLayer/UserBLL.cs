@@ -24,7 +24,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public void Add(object obj)
         {
             User user = obj as User;
-            if (_context.Users.FirstOrDefault(u => u.Name == user.Name && u.Password == user.Password && u.Type==user.Type)!=null )
+            if (_context.Users.FirstOrDefault(u => u.Name == user.Name &&  u.Type==user.Type)!=null )
                 ErrorMessage = "Datele acestea deja exista, alegeti altele!";
             else if (user != null)
             {
@@ -104,7 +104,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public User Authenticate(string username, string password)
         {
-            return _context.Users.FirstOrDefault(u => u.Name == username && u.Password == password);
+            return _context.Users.FirstOrDefault(u => u.Name == username && u.Password == password );
         }
     }
 

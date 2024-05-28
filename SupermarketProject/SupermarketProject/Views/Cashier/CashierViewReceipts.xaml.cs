@@ -23,7 +23,5 @@ namespace SupermarketProject.Views.Cashier
         {
             InitializeComponent();
         }
-
-       
     }
 }

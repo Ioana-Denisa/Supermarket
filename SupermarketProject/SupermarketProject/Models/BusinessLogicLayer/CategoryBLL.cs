@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SupermarketProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SupermarketProject.Models.BusinessLogicLayer
 {
@@ -23,7 +25,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
         public void Add(object obj)
         {
             Category category = obj as Category;
-            if (_context.Categories.FirstOrDefault(u => u.Name == category.Name ) != null )
+            if (_context.Categories.FirstOrDefault(u => u.Name == category.Name) != null)
                 ErrorMessage = "Datele acestea deja exista, alegeti altele!";
             else if (category != null)
             {
@@ -34,11 +36,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 else
                 {
                     _context.Database.ExecuteSqlRaw("CreateCategories @p0", parameters: new object[] { category.Name });
-
-                    //category.IsActive = true;
-                    //_context.Categories.Add(category);
-                    //_context.SaveChanges();
-                    category.CategoryID= _context.Categories.Max(item => item.CategoryID);
+                    category.CategoryID = _context.Categories.Max(item => item.CategoryID);
                     CategoryList.Add(category);
                     ErrorMessage = "";
                 }
@@ -47,7 +45,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
 
         public Category GetById(int id)
         {
-            Category cat= _context.Categories.Find(id);
+            Category cat = _context.Categories.Find(id);
             if (cat != null && cat.IsActive == true)
                 return cat;
             return null;
@@ -59,7 +57,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             ObservableCollection<Category> result = new ObservableCollection<Category>();
             foreach (Category cat in category)
             {
-                if(cat.IsActive==true)
+                if (cat.IsActive == true)
                     result.Add(cat);
             }
             if (result.Count == 0)
@@ -76,9 +74,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 ErrorMessage = "Numele categoriei trebuie precizata!";
             else
             {
-                _context.Database.ExecuteSqlRaw("UpdateCategory @p0,@p1", parameters: new object[] { category.Name,category.CategoryID });
-                //_context.Entry(category).State = EntityState.Modified;
-                //_context.SaveChanges();
+                _context.Database.ExecuteSqlRaw("UpdateCategory @p0,@p1", parameters: new object[] { category.Name, category.CategoryID });
             }
 
         }
@@ -90,16 +86,18 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             {
                 ErrorMessage = "Selecteaza o categorie";
             }
+            else if (_context.Stocks
+        .Any(s => s.Product.CategoryID == category.CategoryID))
+            {
+                ErrorMessage = "Exista produse in stoc care fac parte din aceasta categorie!";
+            }
             else
             {
-                //Category p = _context.Categories.Where(i => i.CategoryID == category.CategoryID).FirstOrDefault();
-                //p.IsActive = false;
-                //_context.SaveChanges();
-                _context.Database.ExecuteSqlRaw("DeleteCategory @p0", parameters: new object[] {  category.CategoryID });
+                _context.Database.ExecuteSqlRaw("DeleteCategory @p0", parameters: new object[] { category.CategoryID });
                 Category categoryInList = CategoryList.FirstOrDefault(i => i.CategoryID == category.CategoryID);
                 if (categoryInList != null)
                 {
-                    categoryInList.IsActive = false; 
+                    categoryInList.IsActive = false;
                 }
                 ErrorMessage = "";
             }

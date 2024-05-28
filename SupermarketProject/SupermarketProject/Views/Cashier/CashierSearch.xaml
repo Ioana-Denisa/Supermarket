@@ -10,8 +10,8 @@
     <Window.DataContext>
         <local:CashierSearchVM/>
     </Window.DataContext>
-    <Grid>
-        <StackPanel HorizontalAlignment="Left" Margin="35,-4,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="260" Height="240" RenderTransformOrigin="0.5,0.5">
+    <Grid Background="#7F5F7C">
+        <StackPanel HorizontalAlignment="Left" Margin="445,34,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="260" Height="240" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -23,29 +23,29 @@
             <Button Content="Search" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="10,-110,0,0" Command="{Binding SearchCommand}">
             </Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Margin="295,14,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="165" Height="265">
+        <StackPanel HorizontalAlignment="Left" Margin="39,69,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="165" Height="265">
             <TextBlock TextWrapping="Wrap" Text="Product name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
             <TextBlock TextWrapping="Wrap" Text="Barcode" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
-            <TextBlock TextWrapping="Wrap" Text="Expiration date" Margin="30,4,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
-            <TextBlock TextWrapping="Wrap" Text="Producer name" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
-            <TextBlock TextWrapping="Wrap" Text="Category name" Margin="30,0,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
+            <TextBlock TextWrapping="Wrap" Text="Expiration date" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock TextWrapping="Wrap" Text="Producer name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="Category name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
         </StackPanel>
-        <StackPanel Margin="395,2,135,226">
+        <StackPanel Margin="139,68,391,160">
             <TextBox x:Name="txtProductName" TextWrapping="Wrap" Text="{Binding ProductName}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
             <TextBox x:Name="txtBarcode" TextWrapping="Wrap" Text="{Binding Barcode}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
             <DatePicker x:Name="dpExpirationDate" SelectedDate="{Binding ExpirationDate}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
-            <ComboBox Name="cbxProducers" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Producers}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding ProducerName, Mode=TwoWay}"/>
-            <ComboBox Name="cbxCategories" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding CategoryName, Mode=TwoWay}"/>
+            <ComboBox Name="cbxProducers" Width="156" Margin="0,0,0,10" Height="25" ItemsSource="{Binding Producers}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding ProducerName, Mode=TwoWay}"/>
+            <ComboBox Name="cbxCategories" Width="156" Margin="0,0,0,10" Height="25" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding CategoryName, Mode=TwoWay}"/>
         </StackPanel>
-        <DataGrid Name="stockGrid" Margin="40,309,110,15" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProductsList}">
+        <DataGrid Name="stockGrid" Margin="10,309,15,15"  FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProductsList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Product name" Binding="{Binding ProductName}" />
-                <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}"/>
-                <DataGridTextColumn Header="Expiration date" Binding="{Binding ExpirationDate}"/>
-                <DataGridTextColumn Header="Producer name" Binding="{Binding ProducerName}"/>
-                <DataGridTextColumn Header="Category name" Binding="{Binding CategoryName}"/>
+                <DataGridTextColumn Header="Product name" Binding="{Binding ProductName}"  Width="200"  FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
+                <DataGridTextColumn Header="Barcode" Binding="{Binding Barcode}" Width="100" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Expiration date" Binding="{Binding ExpirationDate, StringFormat='{}{0:dd-MM-yyyy}'}" Width="140" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Producer name" Binding="{Binding ProducerName}" Width="140" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Category name" Binding="{Binding CategoryName}" Width="140"  FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="35,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+        <TextBlock HorizontalAlignment="Left" Margin="435,274,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
     </Grid>
 </Window>

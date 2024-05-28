@@ -33,8 +33,9 @@ namespace SupermarketProject.ViewModels
         {
             using(var _context=new SupermarketDBContext())
             {
-                var receipts=_context.Receipts.Include(r=>r.ReceiptItems).ToList();
-                Receipts = new ObservableCollection<Receipt>(receipts);
+               var rec = _context.Receipts.Include(r=>r.ReceiptItems).ThenInclude(ri=>ri.Product).ToList();
+                Receipts = new ObservableCollection<Receipt>(rec);
+
             }
         }
     }

@@ -11,12 +11,12 @@
         <local:AdministratorVM/>
     </Window.DataContext>
     <Grid>
-        <StackPanel Margin="75,84,170,45" >
-            <Button Content="Display products and categories for producers" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="500" BorderBrush="{x:Null}" Foreground="White" Margin="0,10,0,10" Height="50"  Command="{Binding ProductCategory}"/>
-            <Button Content="Total price per category" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="500" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="50" Command="{Binding CategoryTotalPriceCommand}" />
-            <Button Content="Cashier details per month " FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="500" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="50" Command="{Binding DailyTotalCashier}"/>
-            <Button Content="Largest Receipt" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="500" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="50" Command="{Binding LargestRecept}"/>
-            <Button Content="View the receipts" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="500" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="50" Command="{Binding ViewReceipts}" />
+        <StackPanel Margin="15,64,10,-30" >
+            <Button Content="Display products and categories for producers" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="700" BorderBrush="{x:Null}" Foreground="White" Margin="0,10,0,10" Height="70"  Command="{Binding ProductCategory}"/>
+            <Button Content="Total price per category" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="700" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="70" Command="{Binding CategoryTotalPriceCommand}" />
+            <Button Content="Cashier details per month " FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="700" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="70" Command="{Binding DailyTotalCashier}"/>
+            <Button Content="Largest Receipt" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic"  Background="#FF758F57" Width="700" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="70" Command="{Binding LargestRecept}"/>
+            <Button Content="View the receipts" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic" Background="#FF758F57" Width="700" BorderBrush="{x:Null}" Foreground="White" Margin="0,0,0,10" Height="70" Command="{Binding ViewReceipts}" />
         </StackPanel>
     </Grid>
 </Window>

@@ -11,8 +11,8 @@
     <Window.DataContext>
         <local:ProducerVM/>
     </Window.DataContext>
-    <Grid>
-        <StackPanel HorizontalAlignment="Left" Margin="35,-4,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="260" Height="240" RenderTransformOrigin="0.5,0.5">
+    <Grid Background="#7F5F7C">
+        <StackPanel HorizontalAlignment="Left" Margin="0,63,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="805" Height="73" RenderTransformOrigin="0.5,0.5">
             <StackPanel.Resources>
                 <localConverter:ProducerConvert x:Key="producerConvert"/>
             </StackPanel.Resources>
@@ -24,7 +24,7 @@
                     <TranslateTransform X="-0.396"/>
                 </TransformGroup>
             </StackPanel.RenderTransform>
-            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="10,-110,0,0" Command="{Binding AddCommand}">
+            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic" Height="50" Width="220" Margin="25,0,50,0" Command="{Binding AddCommand}">
                 <Button.CommandParameter>
                     <MultiBinding Converter="{StaticResource producerConvert}">
                         <Binding ElementName="txtName" Path="Text"/>
@@ -32,24 +32,25 @@
                     </MultiBinding>
                 </Button.CommandParameter>
             </Button>
-            <Button Content="Update" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="-145,10,10,0" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=producerGrid, Path=SelectedItem}"/>
-            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="-165,130,0,0" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=producerGrid, Path=SelectedItem}" />
+            <Button Content="Update" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic" Height="50" Width="220" Margin="0,0,50,0" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=producerGrid, Path=SelectedItem}"/>
+            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="30" FontStyle="Italic" Height="50" Width="220" Margin="0,0,0,0" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=producerGrid, Path=SelectedItem}" FontWeight="Bold" />
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Margin="300,14,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="205">
-            <TextBlock TextWrapping="Wrap" Text="Name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
-            <TextBlock TextWrapping="Wrap" Text="Country" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
+        <StackPanel HorizontalAlignment="Left" Margin="260,179,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="205">
+            <TextBlock TextWrapping="Wrap" Text="Name" Margin="25,0,0,10" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="Country" Margin="25,0,0,10" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" />
         </StackPanel>
-        <StackPanel Margin="395,9,135,355">
-            <TextBox Name="txtName" TextWrapping="Wrap" Text="{Binding ElementName=producerGrid, Path=SelectedItem.Name}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10" />
-            <TextBox Name="txtCountry" TextWrapping="Wrap" Text="{Binding ElementName=producerGrid, Path=SelectedItem.Country}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10" />
+        <StackPanel Margin="375,179,155,185">
+            <TextBox Name="txtName" TextWrapping="Wrap" Text="{Binding ElementName=producerGrid, Path=SelectedItem.Name}" Width="200" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="30" Margin="0,0,0,10" />
+            <TextBox Name="txtCountry" TextWrapping="Wrap" Text="{Binding ElementName=producerGrid, Path=SelectedItem.Country}" Width="200" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="30" Margin="0,0,0,10" />
         </StackPanel>
-        <DataGrid Name="producerGrid" Margin="35,249,290,35" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProducerList}" >
+        <DataGrid Name="producerGrid" Margin="160,264,165,20" FontSize="20" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ProducerList}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ProducerID}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Country" Binding="{Binding Country}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding ProducerID}" Width="100" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="160" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="160" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="35,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,149,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5,4,0,0" TextWrapping="Wrap" Text="PRODUCER" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
     </Grid>
 </Window>

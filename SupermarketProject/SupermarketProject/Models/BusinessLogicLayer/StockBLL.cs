@@ -141,7 +141,10 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             {
                 ErrorMessage = "Selecteaza un stock";
             }
-            else
+            else if(s.Quantity>0)
+            {
+                ErrorMessage = "Stocul nu se poate trece la inactiv deoarece exista produse in el.";
+            }else
             {
                 Stock p = _context.Stocks.Where(i => i.StockID == s.StockID).FirstOrDefault();
                 p.IsActiv = false;

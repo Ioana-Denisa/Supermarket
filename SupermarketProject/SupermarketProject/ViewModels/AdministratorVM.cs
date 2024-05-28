@@ -140,7 +140,7 @@ namespace SupermarketProject.ViewModels
         }
         private void LargestReceptWindow(object obj)
         {
-            var w = new LargestReceipt();
+            var w = new LargestReceiptCashier();
             w.ShowDialog();
         }
 

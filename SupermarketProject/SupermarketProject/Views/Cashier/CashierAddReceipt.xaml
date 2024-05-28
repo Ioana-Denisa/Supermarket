@@ -10,28 +10,29 @@
     <Window.DataContext>
         <local:CashierAddReceiptVM/>
     </Window.DataContext>
-    <Grid>
-        <Button Content="Add product for receipt" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Command="{Binding AddProductCommand}" Margin="450,37,90,425"/>
-        <StackPanel HorizontalAlignment="Left" Margin="15,24,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="270" Height="120">
-            <TextBlock TextWrapping="Wrap" Text="Enter quantity" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
-            <TextBlock TextWrapping="Wrap" Text="Select cashier name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic" />
-            <TextBlock TextWrapping="Wrap" Text="Select product" Margin="30,4,0,10" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"/>
+    <Grid Background="#7F5F7C">
+        <Button Content="Add product for receipt" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Command="{Binding AddProductCommand}" Margin="480,24,60,438"/>
+        <StackPanel HorizontalAlignment="Left" Margin="-15,19,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="270" Height="120">
+            <TextBlock TextWrapping="Wrap" Text="Select cashier name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" />
+            <TextBlock TextWrapping="Wrap" Text="Enter quantity" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"  />
+            <TextBlock TextWrapping="Wrap" Text="Select product" Margin="30,4,0,10" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
         </StackPanel>
-        <StackPanel Margin="155,14,385,364">
-            <TextBox x:Name="txtQuantity" TextWrapping="Wrap" Text="{Binding Quantity}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10"/>
-            <TextBox TextWrapping="Wrap" Text="{Binding Username}"  Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,10,0,0"/>
-            <ComboBox Name="cbxProducts" Width="156" Margin="0,10,0,10" Height="25" ItemsSource="{Binding Products}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedProduct}"  />
+        <StackPanel Margin="180,14,360,364">
+            <TextBox TextWrapping="Wrap" Text="{Binding Username}"  Width="200" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="30" Margin="0,0,0,0"/>
+            <TextBox x:Name="txtQuantity" TextWrapping="Wrap" Text="{Binding Quantity}" Width="200" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="30" Margin="0,10,0,10"/>
+            <ComboBox Name="cbxProducts" Width="200" Margin="0,0,0,10" Height="30" ItemsSource="{Binding Products}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedProduct}"  />
         </StackPanel>
-        <DataGrid Name="stockGrid" Margin="55,179,105,120" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ReceiptProducts}">
+        <DataGrid Name="stockGrid" Margin="55,179,105,120" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ReceiptProducts}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Product name"  Binding="{Binding ProductID}" />
-                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
-                <DataGridTextColumn Header="Subtotal" Binding="{Binding Subtotal, StringFormat='{}{0:C}'}"  />
+                <DataGridTextColumn Header="Product ID"  Width="120" Binding="{Binding ProductID}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
+                <DataGridTextColumn Header="Product name" Width="220"  Binding="{Binding Product.Name}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
+                <DataGridTextColumn Header="Quantity" Width="140" Binding="{Binding Quantity}" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Subtotal" Width="140" Binding="{Binding Subtotal, StringFormat='{}{0:C}'}"  FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Margin="35,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
         <Button Content="Save RECEIPT" HorizontalAlignment="Left" Margin="550,444,0,0" VerticalAlignment="Top" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="170" Command="{Binding  SaveReceiptCommand}"/>
-        <TextBlock HorizontalAlignment="Left" Margin="81,443,0,0" TextWrapping="Wrap" Text="TOTAL:" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox HorizontalAlignment="Left" Margin="165,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="20" Text="{Binding Total, StringFormat='{}{0:C}'}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="66,444,0,0" TextWrapping="Wrap" Text="TOTAL:" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox HorizontalAlignment="Left" Margin="180,449,0,0" FontSize="16"  FontFamily="Times New Roman" FontWeight="Bold" FontStyle="Italic" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" Text="{Binding Total, StringFormat='{}{0:C}'}"/>
     </Grid>
 </Window>

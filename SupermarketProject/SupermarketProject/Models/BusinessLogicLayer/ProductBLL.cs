@@ -50,7 +50,6 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 }
                 else
                 {
-
                     product.IsActive = true;
                     product.Producer=_context.Producers.Where(p=>p.ProducerID==product.ProducerID).FirstOrDefault();
                     product.Category=_context.Categories.Where(c=>c.CategoryID==product.CategoryID).FirstOrDefault();
@@ -149,6 +148,9 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             if (product == null)
             {
                 ErrorMessage = "Selecteaza un produs";
+            }else if(_context.Stocks.Any(s=>s.ProductID==product.ProductID))
+            {
+                ErrorMessage = "Stocul produsului este >0";
             }
             else
             {

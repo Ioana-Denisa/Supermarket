@@ -24,7 +24,7 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             Producer producer = obj as Producer;
             if (_context.Producers.FirstOrDefault(p => p.Name == producer.Name && p.Country==producer.Country) != null)
                 ErrorMessage = "Datele acestea deja exista, alegeti altele!";
-            else if (producer != null)
+            else if(producer!=null)
             {
                 if (string.IsNullOrEmpty(producer.Name))
                 {
@@ -37,10 +37,6 @@ namespace SupermarketProject.Models.BusinessLogicLayer
                 else
                 {
                     _context.Database.ExecuteSqlRaw("CreateProducer @p0,@p1", parameters: new object[] { producer.Name,producer.Country });
-
-                    //producer.IsActive = true;
-                    //_context.Producers.Add(producer);
-                    //_context.SaveChanges();
                     producer.ProducerID = _context.Producers.Max(item => item.ProducerID);
                     ProducersList.Add(producer);
                     ErrorMessage = "";
@@ -81,8 +77,6 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             else
             {
                 _context.Database.ExecuteSqlRaw("UpdateProducers @p0,@p1,@p2", parameters: new object[] { producer.Name,producer.Country,producer.ProducerID });
-                //_context.Entry(producer).State = EntityState.Modified;
-                //_context.SaveChanges();
             }
 
         }
@@ -94,13 +88,13 @@ namespace SupermarketProject.Models.BusinessLogicLayer
             {
                 ErrorMessage = "Selecteaza un producer";
             }
+            else if (_context.Stocks.Any(s => s.Product.ProducerID == producer.ProducerID))
+            {
+                ErrorMessage = "Exista produse in stoc care sunt distribuite de acest producator!";
+            }
             else
             {
                 _context.Database.ExecuteSqlRaw("DeleteProducer @p0", parameters: new object[] { producer.ProducerID });
-
-                //Producer p = _context.Producers.Where(i => i.ProducerID == producer.ProducerID).FirstOrDefault();
-                //p.IsActive = false;
-                //_context.SaveChanges();
                 Producer prodInList = ProducersList.FirstOrDefault(i => i.ProducerID == producer.ProducerID);
                 if (prodInList != null)
                 {

@@ -1,4 +1,5 @@
-﻿using SupermarketProject.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SupermarketProject.Models;
 using SupermarketProject.Models.EntityLayer;
 using SupermarketProject.ViewModels.Commands;
 using System;
@@ -30,7 +31,6 @@ namespace SupermarketProject.ViewModels
         public CashierAddReceiptVM()
         {
             InitializeUsersProducts();
-            ReceiptProducts.CollectionChanged += (s, e) => CalculateTotalReceipt();
         }
 
         public string ErrorMessage
@@ -109,7 +109,6 @@ namespace SupermarketProject.ViewModels
         }
 
         public ICommand AddProductCommand => addProductCommand ?? (addProductCommand = new NonGenericCommand(AddProduct));
-
         public ICommand SaveReceiptCommand => saveReceiptCommand ?? (saveReceiptCommand = new NonGenericCommand(SaveReceipt));
 
       
@@ -130,28 +129,33 @@ namespace SupermarketProject.ViewModels
             {
                 using (var _context = new SupermarketDBContext())
                 {
-                    var stock = _context.Stocks.FirstOrDefault(s => s.ProductID == SelectedProduct.ProductID && s.IsActiv);
+                    var stock = _context.Stocks.Include(s => s.Product)
+                .FirstOrDefault(s => s.ProductID == SelectedProduct.ProductID && s.IsActiv);
                     if (stock != null && stock.Quantity > Quantity)
                     {
-                        _context.Products.Attach(SelectedProduct);
                         var receiptProduct = new ReceiptProducts
                         {
                             ProductID = SelectedProduct.ProductID,
                             Quantity = Quantity,
                             Subtotal = stock.SellingPrice * Quantity,
-                            //Product=SelectedProduct
+                            Product = stock.Product 
                         };
+
                         stock.Quantity -= Quantity;
+                        _context.Stocks.Update(stock);
                         _context.SaveChanges();
+
                         ReceiptProducts.Add(receiptProduct);
                     }
                     else if(stock==null)
                         ErrorMessage="Produsul acesta nu exista in stoc";
                     else
                         ErrorMessage="Stoc insuficient pentru acest produs!";
-                    var user = _context.Users.Where(u => u.Name == username).ToList();
-                    foreach (var item in user)
-                        Cashier = item;
+                    var user = _context.Users.FirstOrDefault(u => u.Name == username);
+                    if (user != null)
+                    {
+                        Cashier = user;
+                    }
                 }
             }
         }
@@ -165,24 +169,23 @@ namespace SupermarketProject.ViewModels
                 { 
                     UserID = Cashier.UserID,
                     ReleseDate=DateTime.Now,
-                    Total=Total
+                    Total = ReceiptProducts.Sum(rp => rp.Subtotal)
                 };
                 _context.Receipts.Add(newReceipt);
                 _context.SaveChanges();
 
-                foreach (var receptP in ReceiptProducts)
+
+                foreach (var receiptProduct in ReceiptProducts)
                 {
-                    receptP.ReceiptID=newReceipt.ReceipID;
-                    _context.ReceiptProducts.Add(receptP);
+                    receiptProduct.ReceiptID = newReceipt.ReceipID;
+                    _context.Products.Attach(receiptProduct.Product);
+                    _context.ReceiptProducts.Add(receiptProduct);
                 }
+
                 _context.SaveChanges();
                 MessageBox.Show("Bonul a fost salvat!");
             }
-        }
-
-        private void CalculateTotalReceipt()
-        {
-            Total = ReceiptProducts.Sum(receipt => receipt.Subtotal);
+            ReceiptProducts.Clear();
         }
 
     }

@@ -11,34 +11,35 @@
     <Window.DataContext>
         <local:CategoryVM/>
     </Window.DataContext>
-    <Grid>
-        <StackPanel HorizontalAlignment="Left" Margin="20,19,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="575" Height="85">
+    <Grid  Background="#7F5F7C">
+        <StackPanel HorizontalAlignment="Center" Margin="0,84,0,0" Orientation="Horizontal" VerticalAlignment="Top" Width="800" Height="85">
             <StackPanel.Resources>
                 <localConverter:CategoryConvert x:Key="categoryConvert"/>
             </StackPanel.Resources>
-            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="20,0,0,10" Command="{Binding AddCommand}">
+            <Button Content="Add" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" Height="50" Width="225" Margin="20,0,0,10" Command="{Binding AddCommand}">
                 <Button.CommandParameter>
                     <MultiBinding Converter="{StaticResource categoryConvert}">
                         <Binding ElementName="txtName" Path="Text"/>
                     </MultiBinding>
                 </Button.CommandParameter>
             </Button>
-            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=categoriesGrid, Path=SelectedItem}"/>
-            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" Height="50" Width="145" Margin="30,0,0,10" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=categoriesGrid, Path=SelectedItem}"/>
+            <Button Content="Update"  Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" Height="50" Width="225" Margin="30,0,0,10" Command="{Binding UpdateCommand}" CommandParameter="{Binding ElementName=categoriesGrid, Path=SelectedItem}"/>
+            <Button Content="Delete" Background="#FFCCBFDC" BorderBrush="#FFAE82E2" FontFamily="Times New Roman" FontSize="25" FontWeight="Bold" FontStyle="Italic" Height="50" Width="225" Margin="30,0,0,10" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=categoriesGrid, Path=SelectedItem}"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Margin="40,119,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="125">
-            <TextBlock TextWrapping="Wrap" Text="Name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" FontStyle="Italic"  />
+        <StackPanel HorizontalAlignment="Left" Margin="175,269,0,0" Orientation="Vertical" VerticalAlignment="Top" Width="160" Height="50">
+            <TextBlock TextWrapping="Wrap" Text="Name" Margin="30,0,0,15" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic"  />
         </StackPanel>
-        <StackPanel Margin="115,114,440,345" >
-            <TextBox Name="txtName" TextWrapping="Wrap" Text="{Binding ElementName=categoriesGrid, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}" Width="155" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="25" Margin="0,0,0,10" />
+        <StackPanel Margin="310,269,245,190" >
+            <TextBox x:Name="txtName" TextWrapping="Wrap" Text="{Binding SelectedItem.Name, ElementName=categoriesGrid, UpdateSourceTrigger=PropertyChanged}" Width="260" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" FontStyle="Italic" Height="40" />
         </StackPanel>
-        <DataGrid Name="categoriesGrid" Margin="40,309,455,75" AutoGenerateColumns="False"  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding CategoryList}" >
+        <DataGrid Name="categoriesGrid" Margin="155,344,150,40" FontSize="20" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic" AutoGenerateColumns="False"  ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding CategoryList}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding CategoryID}"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding CategoryID}" Width="100" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="41,229,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+        <TextBlock HorizontalAlignment="Left" Margin="206,199,0,0" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="344" Height="20" Foreground="#FFFC0F0F"/>
+        <TextBlock HorizontalAlignment="Left"  Margin="10,10,0,0" TextWrapping="Wrap" Text="CATEGORY" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="30" FontWeight="Bold" FontStyle="Italic"/>
 
     </Grid>
 </Window>
