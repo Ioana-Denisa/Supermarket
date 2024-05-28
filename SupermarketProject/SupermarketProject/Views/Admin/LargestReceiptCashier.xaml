@@ -15,7 +15,7 @@
         <Button Content="Search" Command="{Binding Search}" VerticalAlignment="Top" Height="55" FontFamily="Times New Roman" FontSize="40" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF64145B" Background="#FFC68FC0" Margin="105,189,110,0"/>
 
         <Border Background="#C68FC0" BorderBrush="#CCCCCC" BorderThickness="4" CornerRadius="20" Height="Auto" Margin="100,259,110,0">
-            <Grid Margin="10">
+            <Grid Margin="10" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>

@@ -13,7 +13,7 @@
     <Grid Background="#7F5F7C">
         <DataGrid Name="totalGrid" Margin="160,224,155,60" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" FontStyle="Italic" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding DailyTotals}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Day" Binding="{Binding Day}" Width="200" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
+                <DataGridTextColumn Header="Day" Binding="{Binding Day, StringFormat='{}{0:dd-MM-yyyy}'}" Width="200" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
                 <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="200" FontSize="16" FontFamily="Times New Roman"  FontWeight="Bold" FontStyle="Italic"/>
             </DataGrid.Columns>
         </DataGrid>
