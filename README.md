@@ -1,2 +1,2 @@
 # Supermarket
-WPF application with SQL database
+This project involves creating a supermarket management application using C#, the WPF framework for the user interface, and SQLServer for the database. The application will be structured according to the MVVM (Model-View-ViewModel) design pattern. The system will store and manage data related to products, manufacturers, product categories, product stocks, users, receipts, and promotional offers.
